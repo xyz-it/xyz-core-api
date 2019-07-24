@@ -1,5 +1,6 @@
 import { SoapRfcCall, SoapRfc, SoapResponse } from './SoapRfc';
 import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
 import { xAppsSettings } from '../../env/ApiSettings';
 
 export interface QueryParameters {
@@ -71,5 +72,5 @@ function soapResponseToResult(res:SoapResponse):QueryResults {
 export function rfcQuery(params:QueryParameters):Observable<QueryResults> {
   return SoapRfcCall(xAppsSettings.sapConnection.rfc.rfcread)
     .call(mapQueryToInnerPayload(params))
-    .map(soapResponseToResult);
+    .pipe(map(soapResponseToResult));
 }

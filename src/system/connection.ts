@@ -1,5 +1,5 @@
 import { SoapRfcCall, SoapRfc, SoapResponse } from '../underlying/connectors/SoapRfc';
-import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
 import { xAppsSettings } from '../env/ApiSettings';
 
 
@@ -21,14 +21,14 @@ export interface SapServerInfo {
 export function getServerList() {
   return SoapRfcCall('TH_SERVER_LIST')
     .call('<LIST_IPV6></LIST_IPV6>')
-    .map(soapResponseToServerList);
+    .pipe(map(soapResponseToServerList));
 }
 
 
 export function getSapServerInfo() {
   return SoapRfcCall('SCSI_GET_SYSTEM_INFO')
     .call('<ET_CVERS></ET_CVERS>')
-    .map(soapResponseToServerInfo);
+    .pipe(map(soapResponseToServerInfo));
 }
 
 

@@ -2,7 +2,8 @@ import {SalesDocument, SalesDocumentItem, SalesDocumentScheduleLine } from "./sa
 import {Customer} from "../master/partners/customer";
 import { SalesArea } from "./common";
 import {Identifiable} from "../underlying/models/identifiable";
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 import * as _ from 'lodash';
 import { watchClass } from '../tools/conversion/mappers/basic-bapi-mapper';
 
@@ -114,10 +115,10 @@ export class Order extends SalesDocument implements Identifiable<Order> {
       if (items instanceof Array) {
         //Array.prototype.push.apply(this._items,items);
 
-        Observable.from(items)
-            .map((someItem:Item|Object):Item => {
+        from(items)
+            .pipe(map((someItem:Item|Object):Item => {
               return someItem instanceof Item ? someItem: _.merge(new Item(),someItem);
-            })
+            }))
             .subscribe((item:Item) => {
                 this._items.push(item);
             });
@@ -166,7 +167,7 @@ export class Item extends SalesDocumentItem {
 
     addScheduleLines(schedules: Array<Schedule|Object> | Schedule): void {
       if(schedules instanceof Array) {
-        Observable.from(schedules)
+        from(schedules)
         .map((someSchedule:Schedule|Object):Schedule => {
           return someSchedule instanceof Schedule? someSchedule : _.merge(new Schedule(), someSchedule);
         })

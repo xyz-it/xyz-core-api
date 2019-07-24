@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import * as _ from "lodash";
-import { Observable } from "rxjs";
+import { from, Observable } from "rxjs";
 import { makeWatchable, enhancePropertiesOf } from "../../../underlying/models/tracable"
 import { conversion } from './implicit-conversion';
 
@@ -45,7 +45,7 @@ export class BasicMapper {
         let result = new clazz();
 
         // Loop over mapping table and assign each field
-        Observable.from(mapping).subscribe(function (x: { source: string, target: string }) {
+        from(mapping).subscribe(function (x: { source: string, target: string }) {
 
             if (x.target && x.target !== "" && inputJsonObject.hasOwnProperty(x.source)) {
                 let inputValue = inputJsonObject[x.source];
