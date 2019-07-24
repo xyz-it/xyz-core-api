@@ -2,7 +2,8 @@
     this
 */
 import {SoapResponse, SoapRfcCall} from '../SoapRfc';
-import {Observable} from 'rxjs'
+import {from, Observable} from 'rxjs'
+import {map} from 'rxjs/operators'
 import {xAppsSettings} from '../../../env/ApiSettings';
 import {Item, Order, Schedule} from '../../../sales/order';
 import * as mapping from './BapiSoapSalesOrderMapping.json';
@@ -10,16 +11,16 @@ import * as _ from 'lodash';
 import {BasicMapper, FieldMapper} from "../../../tools/conversion/mappers/basic-bapi-mapper";
 import {conversion} from "../../../tools/conversion/mappers/implicit-conversion";
 
-export function getSalesOrderDetails(query: <string>[] | string): Observable<Order[]> {
+export function getSalesOrderDetails(query: Array<string> | string): Observable<Order[]> {
     return SoapRfcCall(xAppsSettings.sapConnection.salesRfc.rfcOrderGetDetails)
         .call(mapOrderQueryToInnerPayload(query))
-        .map(soapResponseToResult);
+        .pipe(map(soapResponseToResult));
 }
 
 export function updateSalesOrderDetails(order: Order): Observable<Order> {
     return SoapRfcCall(xAppsSettings.sapConnection.salesRfc.rfcOrderUpdate)
         .call(mapOrderUpdateToInnerPayload(order))
-        .map(soapUpdateResponseToResult)
+        .pipe(map(soapUpdateResponseToResult))
 }
 
 function mapOrderQueryToInnerPayload(query: Array<string> | string): string {
@@ -104,24 +105,24 @@ function soapResponseToResult(res: SoapResponse): Order[] {
     let scheduleMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_SCHEDULES_OUT") as FieldMapper[];
     let businessDataMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_BUSINESS_OUT") as FieldMapper[];
 
-    Observable.from(orderHeaders).subscribe((headerJson: any) => {
+    from(orderHeaders).subscribe((headerJson: any) => {
         let order = BasicMapper.deserialize(Order, headerMapping, headerJson);
         output.push(order);
         hashedOrder[order.documentId] = order;
     });
 
-    Observable.from(orderItems).subscribe((itemJson: any) => {
+    from(orderItems).subscribe((itemJson: any) => {
         let item = BasicMapper.deserialize(Item, itemMapping, itemJson);
         hashedOrder[item.documentId].addItems(item);
         hashedItem[item.documentId + item.itemId] = item;
     })
 
-    Observable.from(orderSchedules).subscribe((scheduleJson: any) => {
+    from(orderSchedules).subscribe((scheduleJson: any) => {
         let schedule = BasicMapper.deserialize(Schedule, scheduleMapping, scheduleJson);
         hashedItem[schedule.documentId + schedule.itemId].addScheduleLines(schedule);
     })
 
-    Observable.from(orderBusinessData).subscribe((businessDataJson: any) => {
+    from(orderBusinessData).subscribe((businessDataJson: any) => {
         let item = BasicMapper.deserialize(Object, businessDataMapping, businessDataJson) as Object & { documentId: string; itemId: string };
 
         if (item.itemId === "000000") {
@@ -164,7 +165,7 @@ function mapOrderUpdateToInnerPayload(order: Order): string {
             + "</" + fieldMapper.target + ">";
     }
 
-    Observable.from(order.items).subscribe((item: Item) => {
+    from(order.items).subscribe((item: Item) => {
         let itemIn: string = "<item>";
         let itemInX: string = "<item><UPDATEFLAG>U</UPDATEFLAG>";
 
