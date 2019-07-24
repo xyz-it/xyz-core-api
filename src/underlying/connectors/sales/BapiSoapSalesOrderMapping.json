@@ -1,0 +1,3130 @@
+{
+  "BAPISDORDER_GETDETAILEDLIST": {
+    "ORDER_HEADERS_OUT": [
+      {
+        "source": "DOC_NUMBER",
+        "target": "documentId"
+      },
+      {
+        "source": "REC_DATE",
+        "target": "meta.creationDate"
+      },
+      {
+        "source": "REC_TIME",
+        "target": ""
+      },
+      {
+        "source": "CREATED_BY",
+        "target": "meta.creator"
+      },
+      {
+        "source": "QT_VALID_F",
+        "target": "validity.start"
+      },
+      {
+        "source": "QT_VALID_T",
+        "target": "validity.end"
+      },
+      {
+        "source": "DOC_DATE",
+        "target": "meta.documentDate"
+      },
+      {
+        "source": "SD_DOC_CAT",
+        "target": "meta.category"
+      },
+      {
+        "source": "TRAN_GROUP",
+        "target": "meta.transactionGroup"
+      },
+      {
+        "source": "DOC_TYPE",
+        "target": "meta.documentType"
+      },
+      {
+        "source": "ORD_REASON",
+        "target": "reason"
+      },
+      {
+        "source": "WAR_DATE",
+        "target": "warrantyDate"
+      },
+      {
+        "source": "SD_COL_NUM",
+        "target": "submission"
+      },
+      {
+        "source": "DLV_BLOCK",
+        "target": "deliveryBlock"
+      },
+      {
+        "source": "BILL_BLOCK",
+        "target": "billingBlock"
+      },
+      {
+        "source": "NET_VAL_HD",
+        "target": "value.net"
+      },
+      {
+        "source": "CURRENCY",
+        "target": "value.currency"
+      },
+      {
+        "source": "CURREN_ISO",
+        "target": "value.currency"
+      },
+      {
+        "source": "SALES_ORG",
+        "target": "salesArea.salesOrganization"
+      },
+      {
+        "source": "DISTR_CHAN",
+        "target": "salesArea.salesChannel"
+      },
+      {
+        "source": "DIVISION",
+        "target": "salesArea.salesDivision"
+      },
+      {
+        "source": "SALES_GRP",
+        "target": "salesGroup"
+      },
+      {
+        "source": "SALES_OFF",
+        "target": "salesOffice"
+      },
+      {
+        "source": "BUS_AREA",
+        "target": "businessArea"
+      },
+      {
+        "source": "CT_AREA",
+        "target": "costCenterArea"
+      },
+      {
+        "source": "CT_VALID_F",
+        "target": "validity.agreementStart"
+      },
+      {
+        "source": "CT_VALID_T",
+        "target": "validity.agreementEnd"
+      },
+      {
+        "source": "CONDITIONS",
+        "target": "pricing.document"
+      },
+      {
+        "source": "REQ_DATE_H",
+        "target": "delivery.requestedDate"
+      },
+      {
+        "source": "DATE_TYPE",
+        "target": "delivery.dateType"
+      },
+      {
+        "source": "COMPL_DLV",
+        "target": "delivery.complete"
+      },
+      {
+        "source": "DOC_CLASS",
+        "target": "meta.documentClass"
+      },
+      {
+        "source": "DOC_INDIC",
+        "target": "meta.documentIndicator"
+      },
+      {
+        "source": "SD_PRIC_PR",
+        "target": "pricing.schema"
+      },
+      {
+        "source": "SHIP_COND",
+        "target": "shipping.conditions"
+      },
+      {
+        "source": "ORDBILLTYP",
+        "target": "billing.proposedType"
+      },
+      {
+        "source": "ORD_PROBAB",
+        "target": "salesProbability"
+      },
+      {
+        "source": "SEAR_PRPR",
+        "target": "productProposalSearchTerm"
+      },
+      {
+        "source": "PURCH_NO",
+        "target": "customerReference.purchaseOrder"
+      },
+      {
+        "source": "PO_METHOD",
+        "target": "customerReference.purchaseType"
+      },
+      {
+        "source": "PURCH_DATE",
+        "target": "customerReference.purchaseDate"
+      },
+      {
+        "source": "PO_SUPPLEM",
+        "target": "customerReference.purchaseOrderSupplement"
+      },
+      {
+        "source": "REF_1",
+        "target": "customerReference.externalReference"
+      },
+      {
+        "source": "ORDERER_NA",
+        "target": "customerReference.orderer"
+      },
+      {
+        "source": "TELEPHONE",
+        "target": "customerReference.telephone"
+      },
+      {
+        "source": "DUN_COUNT",
+        "target": "dunning.count"
+      },
+      {
+        "source": "DUN_DATE",
+        "target": "dunning.date"
+      },
+      {
+        "source": "SOLD_TO",
+        "target": "customer"
+      },
+      {
+        "source": "COSTCENTER",
+        "target": "costCenter"
+      },
+      {
+        "source": "UPDATE_GRP",
+        "target": "meta.statistics.group"
+      },
+      {
+        "source": "STAT_CURR",
+        "target": "meta.statistics.currency"
+      },
+      {
+        "source": "ISOSTATCUR",
+        "target": "meta.statistics.currency"
+      },
+      {
+        "source": "CH_ON",
+        "target": "meta.changeDate"
+      },
+      {
+        "source": "CUST_GRP1",
+        "target": "customerGroups[0]"
+      },
+      {
+        "source": "CUST_GRP2",
+        "target": "customerGroups[1]"
+      },
+      {
+        "source": "CUST_GRP3",
+        "target": "customerGroups[2]"
+      },
+      {
+        "source": "CUST_GRP4",
+        "target": "customerGroups[3]"
+      },
+      {
+        "source": "CUST_GRP5",
+        "target": "customerGroups[4]"
+      },
+      {
+        "source": "AGREE_COND",
+        "target": "agreementConditions"
+      },
+      {
+        "source": "CO_AREA",
+        "target": "controllingArea"
+      },
+      {
+        "source": "WBS_ELEM",
+        "target": "wbsElement"
+      },
+      {
+        "source": "EXCHG_RATE",
+        "target": "value.exchangeRate"
+      },
+      {
+        "source": "C_CTR_AREA",
+        "target": "credit.controlArea"
+      },
+      {
+        "source": "CRED_ACCNT",
+        "target": "credit.account"
+      },
+      {
+        "source": "CRED_GROUP",
+        "target": "credit.group"
+      },
+      {
+        "source": "REPR_GROUP",
+        "target": "credit.representativeGroup"
+      },
+      {
+        "source": "RISK_CATEG",
+        "target": "credit.riskCategory"
+      },
+      {
+        "source": "CURR_CRED",
+        "target": "credit.currency"
+      },
+      {
+        "source": "ISOCURRCRE",
+        "target": "credit.currency"
+      },
+      {
+        "source": "REL_DAT_DD",
+        "target": "credit.releaseDate"
+      },
+      {
+        "source": "NEXT_CHDAT",
+        "target": "credit.nextCheckDate"
+      },
+      {
+        "source": "NEXT_DATE",
+        "target": "credit.nextDate"
+      },
+      {
+        "source": "REL_CREDIT",
+        "target": "credit.releaseAmount"
+      },
+      {
+        "source": "HI_TYPE_PR",
+        "target": "pricing.customerHierarchyType"
+      },
+      {
+        "source": "DLVSCHEDUS",
+        "target": "delivery.releaseIndicator"
+      },
+      {
+        "source": "PLAN_DLV",
+        "target": "delivery.scheduleType"
+      },
+      {
+        "source": "REF_DOC",
+        "target": "referenceDocument"
+      },
+      {
+        "source": "OB_JNR_HD",
+        "target": "meta.objectNumber"
+      },
+      {
+        "source": "COMP_CODE",
+        "target": "companyCode"
+      },
+      {
+        "source": "ALT_TAX_CL",
+        "target": "tax.alternativeClassification"
+      },
+      {
+        "source": "TAX_CLASS2",
+        "target": "tax.customerClassifications[1]"
+      },
+      {
+        "source": "TAX_CLASS3",
+        "target": "tax.customerClassifications[2]"
+      },
+      {
+        "source": "TAX_CLASS4",
+        "target": "tax.customerClassifications[3]"
+      },
+      {
+        "source": "TAX_CLASS5",
+        "target": "tax.customerClassifications[4]"
+      },
+      {
+        "source": "TAX_CLASS6",
+        "target": "tax.customerClassifications[5]"
+      },
+      {
+        "source": "TAX_CLASS7",
+        "target": "tax.customerClassifications[6]"
+      },
+      {
+        "source": "TAX_CLASS8",
+        "target": "tax.customerClassifications[7]"
+      },
+      {
+        "source": "TAX_CLASS9",
+        "target": "tax.customerClassifications[8]"
+      },
+      {
+        "source": "REF_DOC_L",
+        "target": "reference"
+      },
+      {
+        "source": "ASS_NUMBER",
+        "target": "assignment"
+      },
+      {
+        "source": "DOC_CAT_SD",
+        "target": "meta.precedingDocumentCategory"
+      },
+      {
+        "source": "KALSM_CH",
+        "target": "batchDeterminationProcedure"
+      },
+      {
+        "source": "ACC_PERIOD",
+        "target": "accrualPeriod"
+      },
+      {
+        "source": "ORDERID",
+        "target": "productionOrder"
+      },
+      {
+        "source": "NOTIF_NO",
+        "target": "qualityNotification"
+      },
+      {
+        "source": "MASTER_CON",
+        "target": "masterContract"
+      },
+      {
+        "source": "REF_PROC",
+        "target": "referencingProcedure"
+      },
+      {
+        "source": "CHECK_PART",
+        "target": "checkPartnerAuthorization"
+      },
+      {
+        "source": "PICK_UP_DA",
+        "target": "pickupDates[0]"
+      },
+      {
+        "source": "NUM_PAY_CA",
+        "target": "paymentCardPlan"
+      },
+      {
+        "source": "LINE_TIME",
+        "target": "delivery.proposedScheduleTime"
+      },
+      {
+        "source": "TAX_DEST_CT",
+        "target": "tax.destinationCountry"
+      },
+      {
+        "source": "ISOTAXDEST",
+        "target": "tax.destinationCountry"
+      },
+      {
+        "source": "TAX_DEPART",
+        "target": "tax.departureCountry"
+      },
+      {
+        "source": "ISOTAXDEPA",
+        "target": "tax.departureCountry"
+      },
+      {
+        "source": "EU_TRIANG",
+        "target": "tax.triangularDeal"
+      },
+      {
+        "source": "MAST_CONTR",
+        "target": "masterContractBlock"
+      },
+      {
+        "source": "CML_QTY_DA",
+        "target": "delivery.cumulativeDeliveryDate"
+      },
+      {
+        "source": "MS_DATE",
+        "target": "delivery.masterAvailabilityDate"
+      },
+      {
+        "source": "VERSION",
+        "target": "meta.version"
+      },
+      {
+        "source": "REF_DOC_L_LONG",
+        "target": "reference"
+      },
+      {
+        "source": "CRM_GUID",
+        "target": "crmGuid"
+      }
+    ],
+    "ORDER_ITEMS_OUT": [
+      {
+        "source": "DOC_NUMBER",
+        "target": "documentId"
+      },
+      {
+        "source": "ITM_NUMBER",
+        "target": "itemId"
+      },
+      {
+        "source": "MATERIAL",
+        "target": "material"
+      },
+      {
+        "source": "MAT_ENTRD",
+        "target": "requestedMaterial"
+      },
+      {
+        "source": "PR_REF_MAT",
+        "target": "pricingMaterial"
+      },
+      {
+        "source": "BATCH",
+        "target": "batch"
+      },
+      {
+        "source": "MATL_GROUP",
+        "target": "materialGroup"
+      },
+      {
+        "source": "SHORT_TEXT",
+        "target": "materialDescription.short"
+      },
+      {
+        "source": "ITEM_CATEG",
+        "target": "category"
+      },
+      {
+        "source": "ITEM_TYPE",
+        "target": "type"
+      },
+      {
+        "source": "REL_FOR_DE",
+        "target": "relevancy.delivery"
+      },
+      {
+        "source": "REL_FOR_BI",
+        "target": "relevancy.billing"
+      },
+      {
+        "source": "HG_LV_ITEM",
+        "target": "parentItem"
+      },
+      {
+        "source": "ALTERN_ITM",
+        "target": "alternateFor"
+      },
+      {
+        "source": "REA_FOR_RE",
+        "target": "rejectionReason"
+      },
+      {
+        "source": "PROD_HIER",
+        "target": "productHierarchy"
+      },
+      {
+        "source": "OUT_AGR_TA",
+        "target": "agreement.value"
+      },
+      {
+        "source": "TARGET_QTY",
+        "target": "agreement.quantity"
+      },
+      {
+        "source": "TARGET_QU",
+        "target": "agreement.unit"
+      },
+      {
+        "source": "T_UNIT_ISO",
+        "target": "agreement.unit"
+      },
+      {
+        "source": "TARG_QTY_N",
+        "target": "unit.conversion.numerator"
+      },
+      {
+        "source": "TARG_QTY_D",
+        "target": "unit.conversion.denominator"
+      },
+      {
+        "source": "BASE_UOM",
+        "target": "unit.base"
+      },
+      {
+        "source": "T_BAS_UNIT",
+        "target": "unit.base"
+      },
+      {
+        "source": "SCALE_QUAN",
+        "target": "quantity.scale"
+      },
+      {
+        "source": "ROUND_DLV",
+        "target": "quantity.roundingDelivery"
+      },
+      {
+        "source": "RECON_DATE",
+        "target": "agreement.reconciliationDate"
+      },
+      {
+        "source": "MAX_DEVIAT",
+        "target": "quantity.allowedDeviation"
+      },
+      {
+        "source": "PO_ITM_NO",
+        "target": "customerReference.purchaseOrderItem"
+      },
+      {
+        "source": "CUST_MAT22",
+        "target": "customerMaterialId"
+      },
+      {
+        "source": "MAX_DEV_PE",
+        "target": "quantity.allowedPercentageDeviation"
+      },
+      {
+        "source": "MAX_DEV_DA",
+        "target": "shiftDays"
+      },
+      {
+        "source": "REPAIR_PRO",
+        "target": "repairClassification"
+      },
+      {
+        "source": "DLVSCHEDUS",
+        "target": "usageIndicator"
+      },
+      {
+        "source": "DLV_GROUP",
+        "target": "deliveryGroup"
+      },
+      {
+        "source": "FIXED_QUAN",
+        "target": "quantity.fixed"
+      },
+      {
+        "source": "DELI_UNLIM",
+        "target": "quantity.unlimitedOverdelivery"
+      },
+      {
+        "source": "OVER_DLV_T",
+        "target": "quantity.overdeliveryLimit"
+      },
+      {
+        "source": "UNDER_DLV",
+        "target": "quantity.underdeliveryLimit"
+      },
+      {
+        "source": "BILL_BLOCK",
+        "target": "billingBlock"
+      },
+      {
+        "source": "REPLACE_PT",
+        "target": "replacementPart"
+      },
+      {
+        "source": "METH_BILL",
+        "target": "billingMethod"
+      },
+      {
+        "source": "DIVISION",
+        "target": "division"
+      },
+      {
+        "source": "BUS_AREA",
+        "target": "businessArea"
+      },
+      {
+        "source": "NET_VALUE",
+        "target": "value.net"
+      },
+      {
+        "source": "CURRENCY",
+        "target": "value.currency"
+      },
+      {
+        "source": "CURREN_ISO",
+        "target": "value.currency"
+      },
+      {
+        "source": "MAX_PL_DLV",
+        "target": "delivery.maximumPartialDeliveries"
+      },
+      {
+        "source": "PART_DLV",
+        "target": "delivery.partial"
+      },
+      {
+        "source": "BTCH_SPLIT",
+        "target": "delivery.batchSplit"
+      },
+      {
+        "source": "REQ_QTY",
+        "target": "quantity.ordered"
+      },
+      {
+        "source": "CUM_REQ_DE",
+        "target": "quantity.requiredForDelivery"
+      },
+      {
+        "source": "CUM_CF_QTY",
+        "target": "quantity.confirmed"
+      },
+      {
+        "source": "CUM_CON_QU",
+        "target": "quantity.confirmedBaseUnit"
+      },
+      {
+        "source": "SALES_UNIT",
+        "target": "unit.sales"
+      },
+      {
+        "source": "ISOCODUNIT",
+        "target": "unit.sales"
+      },
+      {
+        "source": "SALES_QTY1",
+        "target": "unit.conversion.numerator"
+      },
+      {
+        "source": "SALES_QTY2",
+        "target": "unit.conversion.denominator"
+      },
+      {
+        "source": "GROSS_WEIG",
+        "target": "weight.gross"
+      },
+      {
+        "source": "NET_WEIGHT",
+        "target": "weight.net"
+      },
+      {
+        "source": "UNIT_OF_WT",
+        "target": "weight.unit"
+      },
+      {
+        "source": "UNIT_WTISO",
+        "target": "weight.unit"
+      },
+      {
+        "source": "VOLUME",
+        "target": "volume.value"
+      },
+      {
+        "source": "VOLUMEUNIT",
+        "target": "volume.unit"
+      },
+      {
+        "source": "VOLUNITISO",
+        "target": "volume.unit"
+      },
+      {
+        "source": "CAU_VBELN",
+        "target": "reference.productionOrder"
+      },
+      {
+        "source": "CAU_POSNR",
+        "target": "reference.productionOrderItem"
+      },
+      {
+        "source": "REF_DOC",
+        "target": "reference.salesDocument"
+      },
+      {
+        "source": "POSNR_VOR",
+        "target": "reference.salesDocumentItem"
+      },
+      {
+        "source": "OBJ_COPY",
+        "target": "reference.fullCopy"
+      },
+      {
+        "source": "UPDAT_FLAG",
+        "target": "reference.documentFlowUpdate"
+      },
+      {
+        "source": "END_RULE",
+        "target": "completionRule"
+      },
+      {
+        "source": "DLV_PRIO",
+        "target": "delivery.priority"
+      },
+      {
+        "source": "PLANT",
+        "target": "plant"
+      },
+      {
+        "source": "STGE_LOC",
+        "target": "storageLocation"
+      },
+      {
+        "source": "SHIP_POINT",
+        "target": "shippingPoint"
+      },
+      {
+        "source": "ROUTE",
+        "target": "route"
+      },
+      {
+        "source": "KEY_ST",
+        "target": "billOfMaterial.origin"
+      },
+      {
+        "source": "DATE_ST",
+        "target": "billOfMaterial.date"
+      },
+      {
+        "source": "NBR_ST",
+        "target": "billOfMaterial.material"
+      },
+      {
+        "source": "STPOS_VBAP",
+        "target": "billOfMaterial.item"
+      },
+      {
+        "source": "ORDER_PROB",
+        "target": "orderProbability"
+      },
+      {
+        "source": "CREAT_DATE",
+        "target": "meta.creationDate"
+      },
+      {
+        "source": "CREATED_BY",
+        "target": "meta.creator"
+      },
+      {
+        "source": "REC_TIME",
+        "target": "meta.creationDate"
+      },
+      {
+        "source": "TAX_CLASS1",
+        "target": "tax.materialClassification[0]"
+      },
+      {
+        "source": "TAX_CLASS2",
+        "target": "tax.materialClassification[1]"
+      },
+      {
+        "source": "TAX_CLASS3",
+        "target": "tax.materialClassification[2]"
+      },
+      {
+        "source": "TAX_CLASS4",
+        "target": "tax.materialClassification[3]"
+      },
+      {
+        "source": "TAX_CLASS5",
+        "target": "tax.materialClassification[4]"
+      },
+      {
+        "source": "TAX_CLASS6",
+        "target": "tax.materialClassification[5]"
+      },
+      {
+        "source": "TAX_CLASS7",
+        "target": "tax.materialClassification[6]"
+      },
+      {
+        "source": "TAX_CLASS8",
+        "target": "tax.materialClassification[7]"
+      },
+      {
+        "source": "TAX_CLASS9",
+        "target": "tax.materialClassification[8]"
+      },
+      {
+        "source": "FIX_SP_DAY",
+        "target": "delivery.shippingProcessing.fixedDays"
+      },
+      {
+        "source": "VAR_SP_DAY",
+        "target": "delivery.shippingProcessing.variableDays"
+      },
+      {
+        "source": "PREC_DOC",
+        "target": "reference.precedingFromReference"
+      },
+      {
+        "source": "NET_PRICE",
+        "target": "value.net"
+      },
+      {
+        "source": "COND_P_UNT",
+        "target": "value.currency"
+      },
+      {
+        "source": "COND_UNIT",
+        "target": "value.currency"
+      },
+      {
+        "source": "CONISOUNIT",
+        "target": "unit.target"
+      },
+      {
+        "source": "RETOURE",
+        "target": "isReturned"
+      },
+      {
+        "source": "CASH_DISC",
+        "target": "isCashDiscount"
+      },
+      {
+        "source": "AVAILCHECK",
+        "target": "availabilityCheckingGroup"
+      },
+      {
+        "source": "SUM_REQUIR",
+        "target": "requirementsSummingMethod"
+      },
+      {
+        "source": "MAT_PR_GRP",
+        "target": "materialPricingGroup"
+      },
+      {
+        "source": "ACCT_ASSGT",
+        "target": "accountAssignmentGroup"
+      },
+      {
+        "source": "REBATE_GRP",
+        "target": "volumeRebateGroup"
+      },
+      {
+        "source": "COMM_GROUP",
+        "target": "commissionGroup"
+      },
+      {
+        "source": "EUR_ART_NR",
+        "target": "ean"
+      },
+      {
+        "source": "PRICE_OK",
+        "target": "isPricingCommited"
+      },
+      {
+        "source": "VAL_TYPE",
+        "target": "valuationType"
+      },
+      {
+        "source": "SEP_VALUAT",
+        "target": "isSplitValuated"
+      },
+      {
+        "source": "BATCH_MGMT",
+        "target": "isBatchHandled"
+      },
+      {
+        "source": "IND_BTCH",
+        "target": "isBatchHandled"
+      },
+      {
+        "source": "MIN_DELY",
+        "target": "delivery.minimumDeliveryQuantity"
+      },
+      {
+        "source": "UPDATE_GRP",
+        "target": "meta.statistics.group"
+      },
+      {
+        "source": "COST_DOC_C",
+        "target": "value.cost"
+      },
+      {
+        "source": "SUBTOT_PP1",
+        "target": "value.subtotals[0]"
+      },
+      {
+        "source": "SUBTOT_PP2",
+        "target": "value.subtotals[1]"
+      },
+      {
+        "source": "SUBTOT_PP3",
+        "target": "value.subtotals[2]"
+      },
+      {
+        "source": "SUBTOT_PP4",
+        "target": "value.subtotals[3]"
+      },
+      {
+        "source": "SUBTOT_PP5",
+        "target": "value.subtotals[4]"
+      },
+      {
+        "source": "SUBTOT_PP6",
+        "target": "value.subtotals[5]"
+      },
+      {
+        "source": "EXCH_RATE",
+        "target": "value.exchangeRate"
+      },
+      {
+        "source": "CH_ON",
+        "target": "meta.changeDate"
+      },
+      {
+        "source": "EAN_UPC",
+        "target": "eanUpc"
+      },
+      {
+        "source": "FIX_DATE",
+        "target": "delivery.isFixedDate"
+      },
+      {
+        "source": "PROFIT_CTR",
+        "target": "profitCenter"
+      },
+      {
+        "source": "PRC_GROUP1",
+        "target": "materialGroups[0]"
+      },
+      {
+        "source": "PRC_GROUP2",
+        "target": "materialGroups[1]"
+      },
+      {
+        "source": "PRC_GROUP3",
+        "target": "materialGroups[2]"
+      },
+      {
+        "source": "PRC_GROUP4",
+        "target": "materialGroups[3]"
+      },
+      {
+        "source": "PRC_GROUP5",
+        "target": "materialGroups[4]"
+      },
+      {
+        "source": "COMPON_QTY",
+        "target": "quantity.component"
+      },
+      {
+        "source": "SUBSTREASO",
+        "target": "substitutionReason"
+      },
+      {
+        "source": "SPEC_STOCK",
+        "target": "specialStock"
+      },
+      {
+        "source": "ALLOC_INDI",
+        "target": "allocation"
+      },
+      {
+        "source": "PROFIT_SEG",
+        "target": "profitSegment"
+      },
+      {
+        "source": "WBS_ELEM",
+        "target": "wbsElement"
+      },
+      {
+        "source": "ORDERID",
+        "target": "productionOrder"
+      },
+      {
+        "source": "PLNG_MATL",
+        "target": "planningMaterial"
+      },
+      {
+        "source": "PLNG_PLANT",
+        "target": "planningPlant"
+      },
+      {
+        "source": "BASE_UNIT",
+        "target": "unit.base"
+      },
+      {
+        "source": "ISOBASUNIT",
+        "target": "unit.base"
+      },
+      {
+        "source": "CONV_FACT",
+        "target": "conversionFactor"
+      },
+      {
+        "source": "ACCTASSCAT",
+        "target": "accountAssignmentCategory"
+      },
+      {
+        "source": "CONSUMPT",
+        "target": "consumptionPosting"
+      },
+      {
+        "source": "BOMEXPLNO",
+        "target": "bomExplosion"
+      },
+      {
+        "source": "OBJ_NR_IT",
+        "target": "objectNumber"
+      },
+      {
+        "source": "RES_ANAL",
+        "target": "resultsAnalysisKey"
+      },
+      {
+        "source": "REQMTSTYP",
+        "target": "requirementType"
+      },
+      {
+        "source": "CREDPRICIT",
+        "target": "value.credit"
+      },
+      {
+        "source": "PARTRELID",
+        "target": "partialReleaseId"
+      },
+      {
+        "source": "ACTCREDID",
+        "target": "activeCreditId"
+      },
+      {
+        "source": "CR_EXCHRAT",
+        "target": "directlyQuotedExchangeRate"
+      },
+      {
+        "source": "CONFIG",
+        "target": "configuration"
+      },
+      {
+        "source": "CHCLASS_IN",
+        "target": "batchClassificationObject"
+      },
+      {
+        "source": "STAT_PRICE",
+        "target": "priceStatus"
+      },
+      {
+        "source": "COND_UPDAT",
+        "target": "conditionUpdate"
+      },
+      {
+        "source": "SERNO_PROF",
+        "target": "serialNumberProfile"
+      },
+      {
+        "source": "NO_OF_SERI",
+        "target": "numberOfSerialNumbers"
+      },
+      {
+        "source": "NOGRPOSTED",
+        "target": "noGoodsReceipt"
+      },
+      {
+        "source": "MAT_GRP_SM",
+        "target": "packagingMaterial"
+      },
+      {
+        "source": "MAN_PR_CH",
+        "target": "manualPrice"
+      },
+      {
+        "source": "DOC_CAT_SD",
+        "target": "precedingDocumentCategory"
+      },
+      {
+        "source": "MATDETERID",
+        "target": "materialDetermination"
+      },
+      {
+        "source": "ITUSAGEID",
+        "target": "itemUsage"
+      },
+      {
+        "source": "COSTESTNR",
+        "target": "costEstimate"
+      },
+      {
+        "source": "CSTG_VRNT",
+        "target": "costingVariant[0]"
+      },
+      {
+        "source": "BOMITEMNR",
+        "target": "bomItem"
+      },
+      {
+        "source": "STAT_VAL",
+        "target": "value.statistical"
+      },
+      {
+        "source": "STAT_DATE",
+        "target": "meta.statistics.date"
+      },
+      {
+        "source": "BUS_TRANST",
+        "target": "businessTransaction"
+      },
+      {
+        "source": "PREF_INDIC",
+        "target": "preferenceIndicator"
+      },
+      {
+        "source": "NRCONDREC",
+        "target": "batchDeterminationCondition"
+      },
+      {
+        "source": "INTCLASSNR",
+        "target": "internalClass"
+      },
+      {
+        "source": "BATCH_EXIT",
+        "target": "batchExit"
+      },
+      {
+        "source": "BOM_CATEGO",
+        "target": "bomCategory"
+      },
+      {
+        "source": "BOM_IT_NR",
+        "target": "bomItemNode"
+      },
+      {
+        "source": "COUNTER",
+        "target": "internalCounter"
+      },
+      {
+        "source": "INCONSCONF",
+        "target": "inconsistentConfiguration"
+      },
+      {
+        "source": "OVERH_KEY",
+        "target": "overheadKey"
+      },
+      {
+        "source": "CSTG_SHEET",
+        "target": "costingSheet"
+      },
+      {
+        "source": "CSTG_VRNT1",
+        "target": "costingVariant[1]"
+      },
+      {
+        "source": "PROD_ALLOC",
+        "target": "productAllocationProcedure"
+      },
+      {
+        "source": "PRICE_REF",
+        "target": "pricingReferenceMaterial"
+      },
+      {
+        "source": "MATPRICGRP",
+        "target": "mainMaterialPricingGroup"
+      },
+      {
+        "source": "MATFRGTGRP",
+        "target": "materialFreightGroup"
+      },
+      {
+        "source": "PLANDLVSCH",
+        "target": "planningDeliveryScheduleInstruction"
+      },
+      {
+        "source": "SEQUENCENO",
+        "target": "sequenceNumber"
+      },
+      {
+        "source": "CREDPRIC",
+        "target": "value.creditPrice"
+      },
+      {
+        "source": "PAY_GUARAN",
+        "target": "paymentGuaranteeFrom"
+      },
+      {
+        "source": "GURANTEED",
+        "target": "guaranteed"
+      },
+      {
+        "source": "CFOP_CODE",
+        "target": "cfop"
+      },
+      {
+        "source": "TAXLAWICMS",
+        "target": "tax.icms"
+      },
+      {
+        "source": "TAXLAWIPI",
+        "target": "tax.ipi"
+      },
+      {
+        "source": "SD_TAXCODE",
+        "target": "tax.code"
+      },
+      {
+        "source": "VALCONTRNR",
+        "target": "valueContract.id"
+      },
+      {
+        "source": "VALCONTRIT",
+        "target": "valueContract.item"
+      },
+      {
+        "source": "ASSORT_MOD",
+        "target": "assortmentModule"
+      },
+      {
+        "source": "VALSPECSTO",
+        "target": "specialStockValuation"
+      },
+      {
+        "source": "MATGRHIE1",
+        "target": "materialGroupHierarchy[0]"
+      },
+      {
+        "source": "MATGRHIE2",
+        "target": "materialGroupHierarchy[1]"
+      },
+      {
+        "source": "PROMOTION",
+        "target": "promotion"
+      },
+      {
+        "source": "SALES_DEAL",
+        "target": "salesDeal"
+      },
+      {
+        "source": "FLGLEADUNI",
+        "target": "unit.leading"
+      },
+      {
+        "source": "FREE_GOODS",
+        "target": "freeGoodsDeliveryControl"
+      },
+      {
+        "source": "VALID_OBJ",
+        "target": "validObject"
+      },
+      {
+        "source": "TAX_AMOUNT",
+        "target": "value.tax"
+      },
+      {
+        "source": "MRP_AREA",
+        "target": "mrpArea"
+      },
+      {
+        "source": "CUST_MAT35",
+        "target": "customerMaterialId"
+      },
+      {
+        "source": "GROSS_VAL",
+        "target": "value.gross"
+      }
+    ],
+    "ORDER_BUSINESS_OUT": [
+      {
+        "source": "OPERATION",
+        "target": ""
+      },
+      {
+        "source": "SD_DOC",
+        "target": "documentId"
+      },
+      {
+        "source": "ITM_NUMBER",
+        "target": "itemId"
+      },
+      {
+        "source": "PRICE_GRP",
+        "target": "priceGroup"
+      },
+      {
+        "source": "CUST_GROUP",
+        "target": "customerGroup"
+      },
+      {
+        "source": "SALES_DIST",
+        "target": "salesDistrict"
+      },
+      {
+        "source": "PRICE_LIST",
+        "target": "priceList"
+      },
+      {
+        "source": "INCOTERMS1",
+        "target": "incoterms.code"
+      },
+      {
+        "source": "INCOTERMS2",
+        "target": "incoterms.place"
+      },
+      {
+        "source": "ORDCOMBIND",
+        "target": "orderCombination"
+      },
+      {
+        "source": "BILL_SCHED",
+        "target": "invoiceCalendar.dates"
+      },
+      {
+        "source": "INVO_SCHED",
+        "target": "invoiceCalendar.schedule"
+      },
+      {
+        "source": "MN_INVOICE",
+        "target": "manualInvoice"
+      },
+      {
+        "source": "EXCHRATEFI",
+        "target": ""
+      },
+      {
+        "source": "ADD_VAL_DY",
+        "target": "additionalValueDays"
+      },
+      {
+        "source": "FIX_VAL_DY",
+        "target": "fixedValueDate"
+      },
+      {
+        "source": "PMNTTRMS",
+        "target": "paymentTerms"
+      },
+      {
+        "source": "PAYMETHODE",
+        "target": "paymentMethod"
+      },
+      {
+        "source": "ACCNT_ASGN",
+        "target": "customerAccountAssignmentGroup"
+      },
+      {
+        "source": "EXCHG_RATE",
+        "target": ""
+      },
+      {
+        "source": "PRICE_DATE",
+        "target": "pricingDate"
+      },
+      {
+        "source": "BILL_DATE",
+        "target": "billingDate"
+      },
+      {
+        "source": "SERV_DATE",
+        "target": "renderedServiceDate"
+      },
+      {
+        "source": "FISC_YEAR",
+        "target": "fiscalYear"
+      },
+      {
+        "source": "POSTPERIOD",
+        "target": "postingPeriod"
+      },
+      {
+        "source": "EXCHRATEST",
+        "target": ""
+      },
+      {
+        "source": "DUNN_KEY",
+        "target": "dunning.key"
+      },
+      {
+        "source": "DUNN_BLOCK",
+        "target": "dunning.block"
+      },
+      {
+        "source": "BILL_PLAN",
+        "target": "invoicePlan"
+      },
+      {
+        "source": "PROMOTION",
+        "target": "promotion"
+      },
+      {
+        "source": "PAY_GUARAN",
+        "target": "paymentGuaranteeProcedure"
+      },
+      {
+        "source": "FINDOCPROC",
+        "target": "internalFinancialDocument"
+      },
+      {
+        "source": "J_1AFITP_D",
+        "target": ""
+      },
+      {
+        "source": "REAS_0_VAT",
+        "target": ""
+      },
+      {
+        "source": "REGION",
+        "target": ""
+      },
+      {
+        "source": "ACTIVICODE",
+        "target": ""
+      },
+      {
+        "source": "DISTRIBTYP",
+        "target": ""
+      },
+      {
+        "source": "TAX_CLASS",
+        "target": ""
+      },
+      {
+        "source": "DEPART_NO",
+        "target": "departmentNumber"
+      },
+      {
+        "source": "REC_POINT",
+        "target": "receivingPoint"
+      },
+      {
+        "source": "PURCH_NO_C",
+        "target": "customerReference.purchaseOrder"
+      },
+      {
+        "source": "PURCH_DATE",
+        "target": "customerReference.purchaseDate"
+      },
+      {
+        "source": "PO_METHOD",
+        "target": "customerReference.purchaseType"
+      },
+      {
+        "source": "REF_1",
+        "target": "customerReference.externalReference"
+      },
+      {
+        "source": "PURCH_NO_S",
+        "target": "customerReference.shipToPartyPurchaseOrder"
+      },
+      {
+        "source": "PO_DAT_S",
+        "target": "customerReference.shipToPartyPurchaseDate"
+      },
+      {
+        "source": "PO_METH_S",
+        "target": "customerReference.shipToPartyPurchaseType"
+      },
+      {
+        "source": "REF_1_S",
+        "target": "customerReference.shipToPartyPurchaseReference"
+      },
+      {
+        "source": "POITMNOS",
+        "target": "customerReference.shipToPartyPurchaseOrderItem"
+      },
+      {
+        "source": "TRANS_DATE",
+        "target": ""
+      },
+      {
+        "source": "TRANSDATE",
+        "target": ""
+      },
+      {
+        "source": "CUSTCONGR1",
+        "target": "customerConditionGroup[0]"
+      },
+      {
+        "source": "CUSTCONGR2",
+        "target": "customerConditionGroup[1]"
+      },
+      {
+        "source": "CUSTCONGR3",
+        "target": "customerConditionGroup[2]"
+      },
+      {
+        "source": "CUSTCONGR4",
+        "target": "customerConditionGroup[3]"
+      },
+      {
+        "source": "CUSTCONGR5",
+        "target": "customerConditionGroup[4]"
+      },
+      {
+        "source": "VALCONTCUR",
+        "target": ""
+      },
+      {
+        "source": "ISOVALCONT",
+        "target": ""
+      },
+      {
+        "source": "EXCHRATECO",
+        "target": ""
+      },
+      {
+        "source": "CURRENCKEY",
+        "target": ""
+      },
+      {
+        "source": "ISOCURRKEY",
+        "target": ""
+      },
+      {
+        "source": "EXCHRATELC",
+        "target": ""
+      },
+      {
+        "source": "CEPRPERCEN",
+        "target": ""
+      },
+      {
+        "source": "INFLAT_IDX",
+        "target": ""
+      },
+      {
+        "source": "BASDATEIDX",
+        "target": ""
+      },
+      {
+        "source": "CUST_PO_NO",
+        "target": ""
+      },
+      {
+        "source": "DLV_TIME",
+        "target": ""
+      },
+      {
+        "source": "DLI_PROFIL",
+        "target": ""
+      },
+      {
+        "source": "CALC_MOTIVE",
+        "target": ""
+      },
+      {
+        "source": "BILL_FORM",
+        "target": ""
+      },
+      {
+        "source": "REVENUETYP",
+        "target": ""
+      },
+      {
+        "source": "BEGDEMAPER",
+        "target": ""
+      },
+      {
+        "source": "EXCHRATELC_V",
+        "target": ""
+      },
+      {
+        "source": "EXCH_RATE_FI_V",
+        "target": ""
+      },
+      {
+        "source": "EXCHG_RATE_V",
+        "target": ""
+      },
+      {
+        "source": "EXCHRATEST_V",
+        "target": ""
+      },
+      {
+        "source": "EXCHRATECO_V",
+        "target": ""
+      },
+      {
+        "source": "DELIV_TYPE",
+        "target": ""
+      },
+      {
+        "source": "TRANS_CAT",
+        "target": ""
+      },
+      {
+        "source": "TRANS_MAT",
+        "target": ""
+      },
+      {
+        "source": "SPEC_PROC",
+        "target": ""
+      },
+      {
+        "source": "PRODCAT",
+        "target": ""
+      },
+      {
+        "source": "FUNC_AREA",
+        "target": ""
+      },
+      {
+        "source": "POD_PROC",
+        "target": ""
+      },
+      {
+        "source": "CAMPAIGN",
+        "target": ""
+      },
+      {
+        "source": "FKK_CONACCT",
+        "target": ""
+      },
+      {
+        "source": "FUNC_AREA_LONG",
+        "target": ""
+      },
+      {
+        "source": "FKK_CONACCT_GUID",
+        "target": ""
+      },
+      {
+        "source": "TRANS_MAT_EXTERNAL",
+        "target": ""
+      },
+      {
+        "source": "TRANS_MAT_GUID",
+        "target": ""
+      },
+      {
+        "source": "TRANS_MAT_VERSION",
+        "target": ""
+      }
+    ],
+    "ORDER_SCHEDULES_OUT": [
+      {
+        "source": "DOC_NUMBER",
+        "target": "documentId"
+      },
+      {
+        "source": "ITM_NUMBER",
+        "target": "itemId"
+      },
+      {
+        "source": "SCHED_LINE",
+        "target": "scheduleId"
+      },
+      {
+        "source": "SCHED_TYPE",
+        "target": "scheduleType"
+      },
+      {
+        "source": "RELFORDEL",
+        "target": "relevancy.delivery"
+      },
+      {
+        "source": "REQ_DATE",
+        "target": "date.requested"
+      },
+      {
+        "source": "REQ_TIME",
+        "target": ""
+      },
+      {
+        "source": "REQ_QTY,",
+        "target": "quantity.requested"
+      },
+      {
+        "source": "CONFIR_QTY",
+        "target": "quantity.confirmed"
+      },
+      {
+        "source": "SALES_UNIT",
+        "target": "quantity.salesUnit"
+      },
+      {
+        "source": "ISOCODUNIT",
+        "target": ""
+      },
+      {
+        "source": "REQ_QTY1",
+        "target": ""
+      },
+      {
+        "source": "BASE_UOM",
+        "target": ""
+      },
+      {
+        "source": "ISOBASUNIT",
+        "target": ""
+      },
+      {
+        "source": "REQ_DATE1",
+        "target": "quantity.procurementDeadline"
+      },
+      {
+        "source": "REQ_TYPE",
+        "target": "requirementType"
+      },
+      {
+        "source": "PLTYPE",
+        "target": "planningType"
+      },
+      {
+        "source": "BUSIDOCNR",
+        "target": ""
+      },
+      {
+        "source": "BUSIITNR",
+        "target": ""
+      },
+      {
+        "source": "SCHED_LIN1",
+        "target": ""
+      },
+      {
+        "source": "EARL_DATE",
+        "target": "date.earliestReservation"
+      },
+      {
+        "source": "MAINT_REQ",
+        "target": "maintenanceRequest"
+      },
+      {
+        "source": "PREQ_NO",
+        "target": "procurement.purchaseRequisition"
+      },
+      {
+        "source": "PO_TYPE",
+        "target": "purchasingType"
+      },
+      {
+        "source": "DOC_CAT",
+        "target": "purchasingCategory"
+      },
+      {
+        "source": "CONF_STAT",
+        "target": "confirmationStatus"
+      },
+      {
+        "source": "IR_IND",
+        "target": "relevancy.invoiceReceipt"
+      },
+      {
+        "source": "RETURNDATE",
+        "target": "date.return"
+      },
+      {
+        "source": "DATE_TYPE",
+        "target": "dateType"
+      },
+      {
+        "source": "TP_DATE",
+        "target": "date.transportation"
+      },
+      {
+        "source": "MS_DATE",
+        "target": "date.availability"
+      },
+      {
+        "source": "LOAD_DATE",
+        "target": "date.loading"
+      },
+      {
+        "source": "GI_DATE",
+        "target": "date.goodsIssue"
+      },
+      {
+        "source": "CORR_QTY",
+        "target": "quantity.corrected"
+      },
+      {
+        "source": "REQ_DLV_BL",
+        "target": "deliveryBlock"
+      },
+      {
+        "source": "GRP_DEFIN",
+        "target": "groupStructure"
+      },
+      {
+        "source": "RELEASTYP",
+        "target": "releaseType"
+      },
+      {
+        "source": "FORCAST_NR",
+        "target": "forecastNumber"
+      },
+      {
+        "source": "COMMIT_QTY",
+        "target": "quantity.commited"
+      },
+      {
+        "source": "SIZE2",
+        "target": "dimension2"
+      },
+      {
+        "source": "SIZE3",
+        "target": "dimension3"
+      },
+      {
+        "source": "UNIT_MEAS",
+        "target": "dimensionUnit"
+      },
+      {
+        "source": "ISO_ROMEI",
+        "target": ""
+      },
+      {
+        "source": "FORMULAKEY",
+        "target": ""
+      },
+      {
+        "source": "SALESQTYNR",
+        "target": ""
+      },
+      {
+        "source": "SALESQTYDE",
+        "target": ""
+      },
+      {
+        "source": "AVAIL_CON",
+        "target": "quantity.manuallyConfirmed"
+      },
+      {
+        "source": "MOVE_TYPE",
+        "target": "movementType"
+      },
+      {
+        "source": "PREQ_ITEM",
+        "target": "procurement.purchaseRequisitionItem"
+      },
+      {
+        "source": "LINTYP_EDI",
+        "target": ""
+      },
+      {
+        "source": "ORDERID",
+        "target": ""
+      },
+      {
+        "source": "PLANORDNR",
+        "target": ""
+      },
+      {
+        "source": "BOMEXPL_NO",
+        "target": ""
+      },
+      {
+        "source": "CUSTCHSTAT",
+        "target": ""
+      },
+      {
+        "source": "GURANTEED",
+        "target": ""
+      },
+      {
+        "source": "MS_TIME",
+        "target": ""
+      },
+      {
+        "source": "TP_TIME",
+        "target": ""
+      },
+      {
+        "source": "LOAD_TIME",
+        "target": ""
+      },
+      {
+        "source": "GI_TIME",
+        "target": ""
+      },
+      {
+        "source": "ROUTESCHED",
+        "target": ""
+      }
+    ]
+  },
+  "BAPI_SALESORDER_CHANGE": {
+    "ORDER_HEADER_IN": [
+      {
+        "source": "",
+        "target": "COLLECT_NO"
+      },
+      {
+        "source": "salesArea.salesOrganization",
+        "target": "SALES_ORG"
+      },
+      {
+        "source": "salesArea.salesChannel",
+        "target": "DISTR_CHAN"
+      },
+      {
+        "source": "salesArea.salesDivision",
+        "target": "DIVISION"
+      },
+      {
+        "source": "salesGroup",
+        "target": "SALES_GRP"
+      },
+      {
+        "source": "salesOffice",
+        "target": "SALES_OFF"
+      },
+      {
+        "source": "delivery.requestedDate",
+        "target": "REQ_DATE_H"
+      },
+      {
+        "source": "delivery.dateType",
+        "target": "DATE_TYPE"
+      },
+      {
+        "source": "customerReference.purchaseOrder",
+        "target": "PURCH_NO_C"
+      },
+      {
+        "source": "customerReference.purchaseDate",
+        "target": "PURCH_DATE"
+      },
+      {
+        "source": "customerReference.purchaseType",
+        "target": "PO_METHOD"
+      },
+      {
+        "source": "customerReference.purchaseOrdersupplement",
+        "target": "PO_SUPPLEM"
+      },
+      {
+        "source": "customerReference.externalReference",
+        "target": "REF_1"
+      },
+      {
+        "source": "customerReference.orderer",
+        "target": "NAME"
+      },
+      {
+        "source": "customerReference.telephone",
+        "target": "TELEPHONE"
+      },
+      {
+        "source": "priceGroup",
+        "target": "PRICE_GRP"
+      },
+      {
+        "source": "customerGroup",
+        "target": "CUST_GROUP"
+      },
+      {
+        "source": "salesDistrict",
+        "target": "SALES_DIST"
+      },
+      {
+        "source": "priceList",
+        "target": "PRICE_LIST"
+      },
+      {
+        "source": "incoterms-code",
+        "target": "INCOTERMS1"
+      },
+      {
+        "source": "incoterms-place",
+        "target": "INCOTERMS2"
+      },
+      {
+        "source": "paymentTerms",
+        "target": "PMNTTRMS"
+      },
+      {
+        "source": "deliveryBlock",
+        "target": "DLV_BLOCK"
+      },
+      {
+        "source": "billingBlock",
+        "target": "BILL_BLOCK"
+      },
+      {
+        "source": "reason",
+        "target": "ORD_REASON"
+      },
+      {
+        "source": "delivery.complete",
+        "target": "COMPL_DLV"
+      },
+      {
+        "source": "pricingDate",
+        "target": "PRICE_DATE"
+      },
+      {
+        "source": "validity.start",
+        "target": "QT_VALID_F"
+      },
+      {
+        "source": "validity.end",
+        "target": "QT_VALID_T"
+      },
+      {
+        "source": "validity.agreementStart",
+        "target": "CT_VALID_F"
+      },
+      {
+        "source": "validity.agreementEnd",
+        "target": "CT_VALID_T"
+      },
+      {
+        "source": "customerGroups[0]",
+        "target": "CUST_GRP1"
+      },
+      {
+        "source": "customerGroups[1]",
+        "target": "CUST_GRP2"
+      },
+      {
+        "source": "customerGroups[2]",
+        "target": "CUST_GRP3"
+      },
+      {
+        "source": "customerGroups[3]",
+        "target": "CUST_GRP4"
+      },
+      {
+        "source": "customerGroups[4]",
+        "target": "CUST_GRP5"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseOrder",
+        "target": "PURCH_NO_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseDate",
+        "target": "PO_DAT_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseType",
+        "target": "PO_METH_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseReference",
+        "target": "REF_1_S"
+      },
+      {
+        "source": "meta.category",
+        "target": "SD_DOC_CAT"
+      },
+      {
+        "source": "meta.documentDate",
+        "target": "DOC_DATE"
+      },
+      {
+        "source": "warrantyDate",
+        "target": "WAR_DATE"
+      },
+      {
+        "source": "shipping.conditions",
+        "target": "SHIP_COND"
+      },
+      {
+        "source": "productProposalSearchTerm",
+        "target": "PP_SEARCH"
+      },
+      {
+        "source": "dunning.count",
+        "target": "DUN_COUNT"
+      },
+      {
+        "source": "dunning.date",
+        "target": "DUN_DATE"
+      },
+      {
+        "source": "costCenter",
+        "target": "COSTCENTER"
+      },
+      {
+        "source": "wbsElement",
+        "target": "WBS_ELEM"
+      },
+      {
+        "source": "delivery.releaseIndicator",
+        "target": "DLVSCHDUSE"
+      },
+      {
+        "source": "delivery.scheduleType",
+        "target": "PLDLVSTYP"
+      },
+      {
+        "source": "referenceDocument",
+        "target": "REF_DOC"
+      },
+      {
+        "source": "companyCode",
+        "target": "COMP_CDE_B"
+      },
+      {
+        "source": "tax.alternativeClassification",
+        "target": "ALTTAX_CLS"
+      },
+      {
+        "source": "tax.customerClassifications[1]",
+        "target": "TAX_CLASS2"
+      },
+      {
+        "source": "tax.customerClassifications[2]",
+        "target": "TAX_CLASS3"
+      },
+      {
+        "source": "tax.customerClassifications[3]",
+        "target": "TAX_CLASS4"
+      },
+      {
+        "source": "tax.customerClassifications[4]",
+        "target": "TAX_CLASS5"
+      },
+      {
+        "source": "tax.customerClassifications[5]",
+        "target": "TAX_CLASS6"
+      },
+      {
+        "source": "tax.customerClassifications[6]",
+        "target": "TAX_CLASS7"
+      },
+      {
+        "source": "tax.customerClassifications[7]",
+        "target": "TAX_CLASS8"
+      },
+      {
+        "source": "tax.customerClassifications[8]",
+        "target": "TAX_CLASS9"
+      },
+      {
+        "source": "reference",
+        "target": "REF_DOC_L"
+      },
+      {
+        "source": "assignment",
+        "target": "ASS_NUMBER"
+      },
+      {
+        "source": "meta.precedingDocumentCategory",
+        "target": "REFDOC_CAT"
+      },
+      {
+        "source": "orderCombination",
+        "target": "ORDCOMB_IN"
+      },
+      {
+        "source": "invoiceCalendar-dates",
+        "target": "BILL_SCHED"
+      },
+      {
+        "source": "invoiceCalendar-schedule",
+        "target": "INVO_SCHED"
+      },
+      {
+        "source": "manualInvoice",
+        "target": "MN_INVOICE"
+      },
+      {
+        "source": "",
+        "target": "EXRATE_FI"
+      },
+      {
+        "source": "additionalValueDays",
+        "target": "ADD_VAL_DY"
+      },
+      {
+        "source": "fixedValueDate",
+        "target": "FIX_VAL_DY"
+      },
+      {
+        "source": "paymentMethod",
+        "target": "PYMT_METH"
+      },
+      {
+        "source": "customerAccountAssignmentGroup",
+        "target": "ACCNT_ASGN"
+      },
+      {
+        "source": "value.exchangeRate",
+        "target": "EXCHG_RATE"
+      },
+      {
+        "source": "billingDate",
+        "target": "BILL_DATE"
+      },
+      {
+        "source": "renderedServiceDate",
+        "target": "SERV_DATE"
+      },
+      {
+        "source": "dunning.key",
+        "target": "DUNN_KEY"
+      },
+      {
+        "source": "dunning.block",
+        "target": "DUNN_BLOCK"
+      },
+      {
+        "source": "promotion",
+        "target": "PROMOTION"
+      },
+      {
+        "source": "paymentGuaranteeProcedure",
+        "target": "PMTGAR_PRO"
+      },
+      {
+        "source": "departmentNumber",
+        "target": "DEPARTM_NO"
+      },
+      {
+        "source": "receivingPoint",
+        "target": "REC_POINT"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseOrderItem",
+        "target": "POITM_NO_S"
+      },
+      {
+        "source": "internalFinancialDocument",
+        "target": "DOC_NUM_FI"
+      },
+      {
+        "source": "customerConditionGroup[0]",
+        "target": "CSTCNDGRP1"
+      },
+      {
+        "source": "customerConditionGroup[1]",
+        "target": "CSTCNDGRP2"
+      },
+      {
+        "source": "customerConditionGroup[2]",
+        "target": "CSTCNDGRP3"
+      },
+      {
+        "source": "customerConditionGroup[3]",
+        "target": "CSTCNDGRP4"
+      },
+      {
+        "source": "customerConditionGroup[4]",
+        "target": "CSTCNDGRP5"
+      },
+      {
+        "source": "",
+        "target": "DLV_TIME"
+      },
+      {
+        "source": "value.currency",
+        "target": "CURRENCY"
+      },
+      {
+        "source": "",
+        "target": "CURR_ISO"
+      },
+      {
+        "source": "",
+        "target": "FKK_CONACCT"
+      },
+      {
+        "source": "",
+        "target": "CAMPAIGN"
+      },
+      {
+        "source": "meta.documentClass",
+        "target": "DOC_CLASS"
+      },
+      {
+        "source": "",
+        "target": "H_CURR"
+      },
+      {
+        "source": "",
+        "target": "H_CURR_ISO"
+      },
+      {
+        "source": "",
+        "target": "SHIP_TYPE"
+      },
+      {
+        "source": "",
+        "target": "S_PROC_IND"
+      },
+      {
+        "source": "reference",
+        "target": "REF_DOC_L_LONG"
+      },
+      {
+        "source": "meta.version",
+        "target": "VERSION"
+      },
+      {
+        "source": "",
+        "target": "PSM_PSTNG_DATE"
+      },
+      {
+        "source": "",
+        "target": "PAYMENT_METHODS"
+      }
+    ],
+    "ORDER_ITEM_IN": [
+      {
+        "source": "itemId",
+        "target": "ITM_NUMBER"
+      },
+      {
+        "source": "parentItem",
+        "target": "HG_LV_ITEM"
+      },
+      {
+        "source": "customerReference.purchaseOrderItem",
+        "target": "PO_ITM_NO"
+      },
+      {
+        "source": "material",
+        "target": "MATERIAL"
+      },
+      {
+        "source": "alternateFor",
+        "target": "ALT_TO_ITM"
+      },
+      {
+        "source": "customerMaterialId",
+        "target": "CUST_MAT22"
+      },
+      {
+        "source": "batch",
+        "target": "BATCH"
+      },
+      {
+        "source": "deliveryGroup",
+        "target": "DLV_GROUP"
+      },
+      {
+        "source": "delivery.partial",
+        "target": "PART_DLV"
+      },
+      {
+        "source": "",
+        "target": "REASON_REJ"
+      },
+      {
+        "source": "billingBlock",
+        "target": "BILL_BLOCK"
+      },
+      {
+        "source": "billingDate",
+        "target": "BILL_DATE"
+      },
+      {
+        "source": "plant",
+        "target": "PLANT"
+      },
+      {
+        "source": "storageLocation",
+        "target": "STORE_LOC"
+      },
+      {
+        "source": "agreement.quantity",
+        "target": "TARGET_QTY"
+      },
+      {
+        "source": "agreement.unit",
+        "target": "TARGET_QU"
+      },
+      {
+        "source": "agreement.unit",
+        "target": "T_UNIT_ISO"
+      },
+      {
+        "source": "category",
+        "target": "ITEM_CATEG"
+      },
+      {
+        "source": "materialDescription.short",
+        "target": "SHORT_TEXT"
+      },
+      {
+        "source": "materialGroups[0]",
+        "target": "PRC_GROUP1"
+      },
+      {
+        "source": "materialGroups[1]",
+        "target": "PRC_GROUP2"
+      },
+      {
+        "source": "materialGroups[2]",
+        "target": "PRC_GROUP3"
+      },
+      {
+        "source": "materialGroups[3]",
+        "target": "PRC_GROUP4"
+      },
+      {
+        "source": "materialGroups[4]",
+        "target": "PRC_GROUP5"
+      },
+      {
+        "source": "productHierarchy",
+        "target": "PROD_HIERA"
+      },
+      {
+        "source": "materialGroup",
+        "target": "MATL_GROUP"
+      },
+      {
+        "source": "customerReference.purchaseOrder",
+        "target": "PURCH_NO_C"
+      },
+      {
+        "source": "customerReference.purchaseDate",
+        "target": "PURCH_DATE"
+      },
+      {
+        "source": "customerReference.purchaseType",
+        "target": "PO_METHOD"
+      },
+      {
+        "source": "customerReference.externalReference",
+        "target": "REF_1"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseOrder",
+        "target": "PURCH_NO_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseDate",
+        "target": "PO_DAT_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseType",
+        "target": "PO_METH_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseReference",
+        "target": "REF_1_S"
+      },
+      {
+        "source": "customerReference.shipToPartyPurchaseOrderItem",
+        "target": "POITM_NO_S"
+      },
+      {
+        "source": "priceGroup",
+        "target": "PRICE_GRP"
+      },
+      {
+        "source": "customerGroup",
+        "target": "CUST_GROUP"
+      },
+      {
+        "source": "salesDistrict",
+        "target": "SALES_DIST"
+      },
+      {
+        "source": "priceList",
+        "target": "PRICE_LIST"
+      },
+      {
+        "source": "incoterms-code",
+        "target": "INCOTERMS1"
+      },
+      {
+        "source": "incoterms-place",
+        "target": "INCOTERMS2"
+      },
+      {
+        "source": "orderCombination",
+        "target": "ORDCOMP_IN"
+      },
+      {
+        "source": "invoiceCalendar-dates",
+        "target": "BILL_SCHED"
+      },
+      {
+        "source": "invoiceCalendar-schedule",
+        "target": "INVO_SCHED"
+      },
+      {
+        "source": "manualInvoice",
+        "target": "MN_INVOICE"
+      },
+      {
+        "source": "",
+        "target": "EX_RATE_FI"
+      },
+      {
+        "source": "additionalValueDays",
+        "target": "ADD_VAL_DY"
+      },
+      {
+        "source": "fixedValueDate",
+        "target": "FIX_VAL_DY"
+      },
+      {
+        "source": "paymentTerms",
+        "target": "PMNTTRMS"
+      },
+      {
+        "source": "",
+        "target": "PYMT_METH"
+      },
+      {
+        "source": "customerAccountAssignmentGroup",
+        "target": "ACCNT_ASGN"
+      },
+      {
+        "source": "",
+        "target": "EXCHG_RATE"
+      },
+      {
+        "source": "pricingDate",
+        "target": "PRICE_DATE"
+      },
+      {
+        "source": "renderedServiceDate",
+        "target": "SERV_DATE"
+      },
+      {
+        "source": "dunning.key",
+        "target": "DUNN_KEY"
+      },
+      {
+        "source": "dunning.block",
+        "target": "DUNN_BLOCK"
+      },
+      {
+        "source": "promotion",
+        "target": "PROMOTION"
+      },
+      {
+        "source": "paymentGuaranteeProcedure",
+        "target": "PMTGAR_PRO"
+      },
+      {
+        "source": "internalFinancialDocument",
+        "target": "DOC_NUM_FI"
+      },
+      {
+        "source": "departmentNumber",
+        "target": "DEPARTM_NO"
+      },
+      {
+        "source": "receivingPoint",
+        "target": "REC_POINT"
+      },
+      {
+        "source": "customerConditionGroup[0]",
+        "target": "CSTCNDGRP1"
+      },
+      {
+        "source": "customerConditionGroup[1]",
+        "target": "CSTCNDGRP2"
+      },
+      {
+        "source": "customerConditionGroup[2]",
+        "target": "CSTCNDGRP3"
+      },
+      {
+        "source": "customerConditionGroup[3]",
+        "target": "CSTCNDGRP4"
+      },
+      {
+        "source": "customerConditionGroup[4]",
+        "target": "CSTCNDGRP5"
+      },
+      {
+        "source": "",
+        "target": "DLV_TIME"
+      },
+      {
+        "source": "unit.sales",
+        "target": "SALES_UNIT"
+      },
+      {
+        "source": "",
+        "target": "S_UNIT_ISO"
+      },
+      {
+        "source": "unit.conversion.numerator",
+        "target": "TRG_QTY_NO"
+      },
+      {
+        "source": "unit.conversion.denominator",
+        "target": "TRGQTY_DEN"
+      },
+      {
+        "source": "quantity.roundingDelivery",
+        "target": "RNDDLV_QTY"
+      },
+      {
+        "source": "quantity.allowedDeviation",
+        "target": "MAXDEVAMNT"
+      },
+      {
+        "source": "quantity.allowedPercentageDeviation",
+        "target": "MAXDEVPER"
+      },
+      {
+        "source": "shiftDays",
+        "target": "MAXDEV_DAY"
+      },
+      {
+        "source": "",
+        "target": "USAGE_IND"
+      },
+      {
+        "source": "quantity.fixed",
+        "target": "FIXED_QUAN"
+      },
+      {
+        "source": "",
+        "target": "UNLMT_DLV"
+      },
+      {
+        "source": "quantity.overdeliveryLimit",
+        "target": "OVERDLVTOL"
+      },
+      {
+        "source": "quantity.underdeliveryLimit",
+        "target": "UNDDLV_TOL"
+      },
+      {
+        "source": "division",
+        "target": "DIVISION"
+      },
+      {
+        "source": "unit.conversion.numerator",
+        "target": "SALQTYNUM"
+      },
+      {
+        "source": "unit.conversion.denominator",
+        "target": "SALQTYDEN"
+      },
+      {
+        "source": "",
+        "target": "GROSS_WGHT"
+      },
+      {
+        "source": "weight.net",
+        "target": "NET_WEIGHT"
+      },
+      {
+        "source": "weight.unit",
+        "target": "UNTOF_WGHT"
+      },
+      {
+        "source": "",
+        "target": "UNOF_WTISO"
+      },
+      {
+        "source": "volume.value",
+        "target": "VOLUME"
+      },
+      {
+        "source": "",
+        "target": "VOLUNIT"
+      },
+      {
+        "source": "volume.unit",
+        "target": "VOLUNITISO"
+      },
+      {
+        "source": "delivery.priority",
+        "target": "DLV_PRIO"
+      },
+      {
+        "source": "shippingPoint",
+        "target": "SHIP_POINT"
+      },
+      {
+        "source": "route",
+        "target": "ROUTE"
+      },
+      {
+        "source": "meta.creator",
+        "target": "CREATED_BY"
+      },
+      {
+        "source": "tax.materialClassification[0]",
+        "target": "TAX_CLASS1"
+      },
+      {
+        "source": "tax.materialClassification[1]",
+        "target": "TAX_CLASS2"
+      },
+      {
+        "source": "tax.materialClassification[2]",
+        "target": "TAX_CLASS3"
+      },
+      {
+        "source": "tax.materialClassification[3]",
+        "target": "TAX_CLASS4"
+      },
+      {
+        "source": "tax.materialClassification[4]",
+        "target": "TAX_CLASS5"
+      },
+      {
+        "source": "tax.materialClassification[5]",
+        "target": "TAX_CLASS6"
+      },
+      {
+        "source": "tax.materialClassification[6]",
+        "target": "TAX_CLASS7"
+      },
+      {
+        "source": "tax.materialClassification[7]",
+        "target": "TAX_CLASS8"
+      },
+      {
+        "source": "tax.materialClassification[8]",
+        "target": "TAX_CLASS9"
+      },
+      {
+        "source": "materialPricingGroup",
+        "target": "MAT_PR_GRP"
+      },
+      {
+        "source": "valuationType",
+        "target": "VAL_TYPE"
+      },
+      {
+        "source": "delivery.isFixedDate",
+        "target": "FIXDAT_QTY"
+      },
+      {
+        "source": "bomExplosion",
+        "target": "BOMEXPL_NO"
+      },
+      {
+        "source": "resultsAnalysisKey",
+        "target": "RESANALKEY"
+      },
+      {
+        "source": "requirementType",
+        "target": "REQMTS_TYP"
+      },
+      {
+        "source": "noGoodsReceipt",
+        "target": "NO_GR_POST"
+      },
+      {
+        "source": "businessTransaction",
+        "target": "BUS_TRANST"
+      },
+      {
+        "source": "",
+        "target": "OVERHD_KEY"
+      },
+      {
+        "source": "costingSheet",
+        "target": "CSTG_SHEET"
+      },
+      {
+        "source": "materialFreightGroup",
+        "target": "MATFRGTGRP"
+      },
+      {
+        "source": "planningDeliveryScheduleInstruction",
+        "target": "PLDLVSHDIN"
+      },
+      {
+        "source": "sequenceNumber",
+        "target": "SEQ_NO"
+      },
+      {
+        "source": "",
+        "target": "BIL_FORM"
+      },
+      {
+        "source": "",
+        "target": "DLI_PROFIL"
+      },
+      {
+        "source": "",
+        "target": "REV_TYPE"
+      },
+      {
+        "source": "",
+        "target": "BEGDEM_PER"
+      },
+      {
+        "source": "pricingMaterial",
+        "target": "PR_REF_MAT"
+      },
+      {
+        "source": "",
+        "target": "REFOBJTYPE"
+      },
+      {
+        "source": "",
+        "target": "REFOBJKEY"
+      },
+      {
+        "source": "",
+        "target": "REFLOGSYS"
+      },
+      {
+        "source": "orderProbability",
+        "target": "ORDER_PROB"
+      },
+      {
+        "source": "delivery.maximumPartialDeliveries",
+        "target": "MAX_PL_DLV"
+      },
+      {
+        "source": "cfop",
+        "target": "CFOP_CODE"
+      },
+      {
+        "source": "tax.icms",
+        "target": "TAXLAWICMS"
+      },
+      {
+        "source": "tax.ipi",
+        "target": "TAXLAWIPI"
+      },
+      {
+        "source": "tax.code",
+        "target": "SD_TAXCODE"
+      },
+      {
+        "source": "assortmentModule",
+        "target": "ASSORT_MOD"
+      },
+      {
+        "source": "quantity.component",
+        "target": "COMP_QUANT"
+      },
+      {
+        "source": "",
+        "target": "TARGET_VAL"
+      },
+      {
+        "source": "value.currency",
+        "target": "CURRENCY"
+      },
+      {
+        "source": "",
+        "target": "CURR_ISO"
+      },
+      {
+        "source": "profitCenter",
+        "target": "PROFIT_CTR"
+      },
+      {
+        "source": "productionOrder",
+        "target": "ORDERID"
+      },
+      {
+        "source": "wbsElement",
+        "target": "WBS_ELEM"
+      },
+      {
+        "source": "",
+        "target": "DEPREC_PER"
+      },
+      {
+        "source": "reference.salesDocument",
+        "target": "REF_DOC"
+      },
+      {
+        "source": "reference.salesDocumentItem",
+        "target": "REF_DOC_IT"
+      },
+      {
+        "source": "precedingDocumentCategory",
+        "target": "REF_DOC_CA"
+      },
+      {
+        "source": "customerMaterialId",
+        "target": "CUST_MAT35"
+      },
+      {
+        "source": "",
+        "target": "EXCH_RATE_FI_V"
+      },
+      {
+        "source": "",
+        "target": "EXCHG_RATE_V"
+      },
+      {
+        "source": "",
+        "target": "ITEMGUID_ATP"
+      },
+      {
+        "source": "valueContract.id",
+        "target": "VAL_CONTR"
+      },
+      {
+        "source": "valueContract.item",
+        "target": "VAL_CON_I"
+      },
+      {
+        "source": "",
+        "target": "CONFIG_ID"
+      },
+      {
+        "source": "",
+        "target": "INST_ID"
+      },
+      {
+        "source": "",
+        "target": "MAT_EXT"
+      },
+      {
+        "source": "",
+        "target": "MAT_GUID"
+      },
+      {
+        "source": "",
+        "target": "MAT_VERS"
+      },
+      {
+        "source": "",
+        "target": "P_MAT_EXT"
+      },
+      {
+        "source": "",
+        "target": "P_MAT_GUID"
+      },
+      {
+        "source": "",
+        "target": "P_MAT_VERS"
+      },
+      {
+        "source": "",
+        "target": "FUNC_AREA"
+      },
+      {
+        "source": "",
+        "target": "ALTERN_BOM"
+      },
+      {
+        "source": "",
+        "target": "FKK_CONACCT"
+      },
+      {
+        "source": "eanUpc",
+        "target": "EAN_UPC"
+      },
+      {
+        "source": "",
+        "target": "PRODCAT"
+      },
+      {
+        "source": "",
+        "target": "SHIP_TYPE"
+      },
+      {
+        "source": "",
+        "target": "S_PROC_IND"
+      },
+      {
+        "source": "",
+        "target": "FUNC_AREA_LONG"
+      },
+      {
+        "source": "",
+        "target": "BILL_REL"
+      },
+      {
+        "source": "itemUsage",
+        "target": "VW_UEPOS"
+      },
+      {
+        "source": "",
+        "target": "CAMPAIGN"
+      },
+      {
+        "source": "usageIndicator",
+        "target": "DLVSCHDUSE"
+      },
+      {
+        "source": "",
+        "target": "CFOP_LONG"
+      },
+      {
+        "source": "",
+        "target": "SELECTION"
+      },
+      {
+        "source": "requestedMaterial",
+        "target": "MAT_ENTRD"
+      },
+      {
+        "source": "",
+        "target": "LOG_SYSTEM_OWN"
+      },
+      {
+        "source": "",
+        "target": "ITM_TYPE_USAGE"
+      },
+      {
+        "source": "",
+        "target": "TAXLAWISS"
+      },
+      {
+        "source": "",
+        "target": "MAT_ENTRD_EXTERNAL"
+      },
+      {
+        "source": "",
+        "target": "MAT_ENTRD_GUID"
+      },
+      {
+        "source": "",
+        "target": "MAT_ENTRD_VERSION"
+      },
+      {
+        "source": "",
+        "target": "LOC_TAXCAT"
+      },
+      {
+        "source": "",
+        "target": "LOC_ZEROVAT"
+      },
+      {
+        "source": "",
+        "target": "LOC_ACTCODE"
+      },
+      {
+        "source": "",
+        "target": "LOC_DISTTYPE"
+      },
+      {
+        "source": "",
+        "target": "LOC_TXRELCLAS"
+      },
+      {
+        "source": "",
+        "target": "CALC_MOTIVE"
+      },
+      {
+        "source": "",
+        "target": "COMPREAS"
+      },
+      {
+        "source": "",
+        "target": "FUND"
+      },
+      {
+        "source": "",
+        "target": "FUNDS_CTR"
+      },
+      {
+        "source": "",
+        "target": "CMMT_ITEM"
+      },
+      {
+        "source": "",
+        "target": "GRANT_NBR"
+      },
+      {
+        "source": "",
+        "target": "BUDGET_PERIOD"
+      },
+      {
+        "source": "",
+        "target": "TAXLAWCOFINS"
+      },
+      {
+        "source": "",
+        "target": "TAXLAWPIS"
+      },
+      {
+        "source": "",
+        "target": "TREASURY_ACC_SYMBOL"
+      },
+      {
+        "source": "",
+        "target": "BUSINESS_EVENT_TCODE"
+      },
+      {
+        "source": "",
+        "target": "MODIFICATION_ALLOWED"
+      },
+      {
+        "source": "",
+        "target": "CANCELLATION_ALLOWED"
+      },
+      {
+        "source": "",
+        "target": "PAYMENT_METHODS"
+      },
+      {
+        "source": "",
+        "target": "BUSINESS_PARTNER_NO"
+      },
+      {
+        "source": "",
+        "target": "REPORTING_FREQ"
+      }
+    ]
+  }
+}
