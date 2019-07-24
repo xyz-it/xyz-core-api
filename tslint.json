@@ -6,9 +6,15 @@
     // waiting on https://github.com/palantir/tslint/pull/3708
     "no-implicit-dependencies": [true, "dev"],
     "no-submodule-imports": false,
-    "no-invalid-this": true,
+    "no-invalid-this": false,
     "class-methods-use-this": "enabled",
     "max-classes-per-file": false,
+    "array-type": false,
+    "ordered-imports": false,
+    "forin": false,
+    "object-literal-shorthand": false,
+    "object-literal-sort-keys": false,
+    "variable-name": false,
 
     /* tslint-immutable rules */
     // Recommended built-in rules
@@ -17,22 +23,19 @@
     "typedef": [true, "call-signature"],
 
     // Immutability rules
-    "readonly-keyword": true,
-    "readonly-array": true,
-    "no-let": true,
-    "no-object-mutation": true,
+    "readonly-keyword": false,
+    "readonly-array": false,
+    "no-let": false,
+    "no-object-mutation": false,
     "no-delete": true,
     "no-method-signature": true,
 
     // Functional style rules
-    "no-this": true,
-    "no-class": true,
+    "no-this": false,
+    "no-class": false,
     "no-mixed-interface": true,
-    "no-expression-statement": [
-      true,
-      { "ignore-prefix": ["console.", "process.exit"] }
-    ],
-    "no-if-statement": true
+    "no-expression-statement": false,
+    "no-if-statement": false
     /* end tslint-immutable rules */
   }
 }

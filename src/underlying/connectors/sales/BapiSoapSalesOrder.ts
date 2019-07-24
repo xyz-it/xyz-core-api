@@ -90,40 +90,40 @@ function soapResponseToResult(res: SoapResponse): Order[] {
     console.log("soapResponseToResult");
     console.log(res);
 
-    let output: Order[] = [];
-    let hashedOrder: any = {};
-    let hashedItem: any = {};
+    const output: Order[] = [];
+    const hashedOrder: any = {};
+    const hashedItem: any = {};
 
-    let queriedOrders: string[] = res.response.SALES_DOCUMENTS.item.constructor == Array ? res.response.SALES_DOCUMENTS.item : [res.response.SALES_DOCUMENTS.item];
-    let orderHeaders: any[] = res.response.ORDER_HEADERS_OUT.item.constructor == Array ? res.response.ORDER_HEADERS_OUT.item : [res.response.ORDER_HEADERS_OUT.item];
-    let orderItems: any[] = res.response.ORDER_ITEMS_OUT.item.constructor == Array ? res.response.ORDER_ITEMS_OUT.item : [res.response.ORDER_ITEMS_OUT.item];
-    let orderSchedules: any[] = res.response.ORDER_SCHEDULES_OUT.item.constructor == Array ? res.response.ORDER_SCHEDULES_OUT.item : [res.response.ORDER_SCHEDULES_OUT.item];
-    let orderBusinessData: any[] = res.response.ORDER_BUSINESS_OUT.item.constructor == Array ? res.response.ORDER_BUSINESS_OUT.item : [res.response.ORDER_BUSINESS_OUT.item];
+    const queriedOrders: string[] = res.response.SALES_DOCUMENTS.item.constructor == Array ? res.response.SALES_DOCUMENTS.item : [res.response.SALES_DOCUMENTS.item];
+    const orderHeaders: any[] = res.response.ORDER_HEADERS_OUT.item.constructor == Array ? res.response.ORDER_HEADERS_OUT.item : [res.response.ORDER_HEADERS_OUT.item];
+    const orderItems: any[] = res.response.ORDER_ITEMS_OUT.item.constructor == Array ? res.response.ORDER_ITEMS_OUT.item : [res.response.ORDER_ITEMS_OUT.item];
+    const orderSchedules: any[] = res.response.ORDER_SCHEDULES_OUT.item.constructor == Array ? res.response.ORDER_SCHEDULES_OUT.item : [res.response.ORDER_SCHEDULES_OUT.item];
+    const orderBusinessData: any[] = res.response.ORDER_BUSINESS_OUT.item.constructor == Array ? res.response.ORDER_BUSINESS_OUT.item : [res.response.ORDER_BUSINESS_OUT.item];
 
-    let headerMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_HEADERS_OUT") as FieldMapper[];
-    let itemMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_ITEMS_OUT") as FieldMapper[];
-    let scheduleMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_SCHEDULES_OUT") as FieldMapper[];
-    let businessDataMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_BUSINESS_OUT") as FieldMapper[];
+    const headerMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_HEADERS_OUT") as FieldMapper[];
+    const itemMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_ITEMS_OUT") as FieldMapper[];
+    const scheduleMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_SCHEDULES_OUT") as FieldMapper[];
+    const businessDataMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_BUSINESS_OUT") as FieldMapper[];
 
     from(orderHeaders).subscribe((headerJson: any) => {
-        let order = BasicMapper.deserialize(Order, headerMapping, headerJson);
+        const order = BasicMapper.deserialize(Order, headerMapping, headerJson);
         output.push(order);
         hashedOrder[order.documentId] = order;
     });
 
     from(orderItems).subscribe((itemJson: any) => {
-        let item = BasicMapper.deserialize(Item, itemMapping, itemJson);
+        const item = BasicMapper.deserialize(Item, itemMapping, itemJson);
         hashedOrder[item.documentId].addItems(item);
         hashedItem[item.documentId + item.itemId] = item;
     })
 
     from(orderSchedules).subscribe((scheduleJson: any) => {
-        let schedule = BasicMapper.deserialize(Schedule, scheduleMapping, scheduleJson);
+        const schedule = BasicMapper.deserialize(Schedule, scheduleMapping, scheduleJson);
         hashedItem[schedule.documentId + schedule.itemId].addScheduleLines(schedule);
     })
 
     from(orderBusinessData).subscribe((businessDataJson: any) => {
-        let item = BasicMapper.deserialize(Object, businessDataMapping, businessDataJson) as Object & { documentId: string; itemId: string };
+        const item = BasicMapper.deserialize(Object, businessDataMapping, businessDataJson) as Object & { documentId: string; itemId: string };
 
         if (item.itemId === "000000") {
             _.assign(hashedOrder[item.documentId], item);
@@ -139,8 +139,8 @@ function soapResponseToResult(res: SoapResponse): Order[] {
 
 function mapOrderUpdateToInnerPayload(order: Order): string {
 
-    let headerMapping = _.get(mapping, "BAPI_SALESORDER_CHANGE.ORDER_HEADER_IN") as FieldMapper[];
-    let itemMapping = _.get(mapping, "BAPI_SALESORDER_CHANGE.ORDER_ITEM_IN") as FieldMapper[];
+    const headerMapping = _.get(mapping, "BAPI_SALESORDER_CHANGE.ORDER_HEADER_IN") as FieldMapper[];
+    const itemMapping = _.get(mapping, "BAPI_SALESORDER_CHANGE.ORDER_ITEM_IN") as FieldMapper[];
 
     let orderHeaderIn: string = "";
     let orderHeaderInX: string = "<UPDATEFLAG>U</UPDATEFLAG>";
@@ -149,12 +149,12 @@ function mapOrderUpdateToInnerPayload(order: Order): string {
     let itemsInX: string = "";
 
 
-    for (let idx in headerMapping) {
-        let fieldMapper: FieldMapper = headerMapping[idx];
+    for (const idx in headerMapping) {
+        const fieldMapper: FieldMapper = headerMapping[idx];
 
-        let value: any = (order as any)[fieldMapper.source];
-        let stringValue: string = conversion.from("any").to("string")(value);
-        let changed: string = !_.isUndefined(value) ? "X" : "";
+        const value: any = (order as any)[fieldMapper.source];
+        const stringValue: string = conversion.from("any").to("string")(value);
+        const changed: string = !_.isUndefined(value) ? "X" : "";
 
         orderHeaderIn += "<" + fieldMapper.target + ">"
             + stringValue
@@ -169,11 +169,11 @@ function mapOrderUpdateToInnerPayload(order: Order): string {
         let itemIn: string = "<item>";
         let itemInX: string = "<item><UPDATEFLAG>U</UPDATEFLAG>";
 
-        for (let idx in itemMapping) {
-            let fieldMapper: FieldMapper = itemMapping[idx];
-            let value: any = (item as any)[fieldMapper.source];
-            let stringValue: string = conversion.from("any").to("string")(value);
-            let changed: string = !_.isUndefined(value) ? "X" : "";
+        for (const idx in itemMapping) {
+            const fieldMapper: FieldMapper = itemMapping[idx];
+            const value: any = (item as any)[fieldMapper.source];
+            const stringValue: string = conversion.from("any").to("string")(value);
+            const changed: string = !_.isUndefined(value) ? "X" : "";
 
             itemIn += "<" + fieldMapper.target + ">"
                 + stringValue

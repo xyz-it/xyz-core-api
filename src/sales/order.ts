@@ -168,9 +168,9 @@ export class Item extends SalesDocumentItem {
     addScheduleLines(schedules: Array<Schedule|Object> | Schedule): void {
       if(schedules instanceof Array) {
         from(schedules)
-        .map((someSchedule:Schedule|Object):Schedule => {
+        .pipe(map((someSchedule:Schedule|Object):Schedule => {
           return someSchedule instanceof Schedule? someSchedule : _.merge(new Schedule(), someSchedule);
-        })
+        }))
         .subscribe((someSchedule:Schedule) => {
                 this._scheduleLines.push(someSchedule);
         });
