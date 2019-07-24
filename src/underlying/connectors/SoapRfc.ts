@@ -1,5 +1,6 @@
-//import { AjaxRequest, AjaxObservable, ajaxPost } from 'rxjs/observable/dom/AjaxObservable';
+// import { AjaxRequest, AjaxObservable, ajaxPost } from 'rxjs/observable/dom/AjaxObservable';
 import * as Rx from 'rxjs';
+import { AjaxResponse } from "rxjs/ajax";
 import * as xml2js from 'xml2js';
 import { ApiSettings, xAppsSettings } from '../../env/ApiSettings';
 
@@ -123,7 +124,7 @@ export class SoapRfc {
    * [res description]
    * @param res AjaxResponse
    */
-  private responseToSoapResponse = (res:Rx.AjaxResponse) => {
+  private responseToSoapResponse = (res:AjaxResponse) => {
     let xmlObject:any = {};
     let me = this;
 
