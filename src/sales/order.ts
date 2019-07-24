@@ -11,41 +11,14 @@ import { watchClass } from '../tools/conversion/mappers/basic-bapi-mapper';
 /**
  * A sales order in SAP, with remote business rules
  *
- * <uml alt="Class Diagram">
- interface Sales.SalesDocument
- interface Sales.SalesDocumentItem
-
- Sales.SalesDocument <|-- Sales.Order
- Sales.SalesDocumentItem <|-- Sales.Order.Item
- Sales.Order o-- "*" Sales.Order.Item
-
- class Sales.Order {
-  -documentId
-  +customerId
-  __ Getters/Setters __
-  + get/set/CustomerId()
-  __ No side-effect methods __
-  + getDetailedPrice()
-  + getTotalPrice()
-  __ Side-effect methods __
-  + synchronize()
-}
-
- class Sales.Order.Item {
-  .. Simple Getter ..
-  + getName()
-  + getAddress()
-  .. Some setter ..
-  + setName()
-  __ private data __
-  int age
-  -- encrypted --
-  String password
-}
- * </uml>
  */
 @watchClass
 export class Order extends SalesDocument implements Identifiable<Order> {
+
+  public static fetch(id:string):Order {
+    return null;
+  };
+
 
   private _items:Item[] = [];
 
@@ -75,9 +48,6 @@ export class Order extends SalesDocument implements Identifiable<Order> {
 
 
 
-    static fetch<Order>(id:string):Order {
-        return null;
-    };
 
     /**
      * Change customer
@@ -101,7 +71,7 @@ export class Order extends SalesDocument implements Identifiable<Order> {
      * @param callback
      * @returns       id of the customer
      */
-    synchronize(callback: any): Observable<Order> {
+    public synchronize(callback: any): Observable<Order> {
       return null;
     }
 
@@ -111,12 +81,12 @@ export class Order extends SalesDocument implements Identifiable<Order> {
      * @param items
      * @returns       
      */
-    addItems(items: Array<Item|Object> | Item): void {
+    public addItems(items: Array<Item|object> | Item): void {
       if (items instanceof Array) {
-        //Array.prototype.push.apply(this._items,items);
+        // Array.prototype.push.apply(this._items,items);
 
         from(items)
-            .pipe(map((someItem:Item|Object):Item => {
+            .pipe(map((someItem:Item|object):Item => {
               return someItem instanceof Item ? someItem: _.merge(new Item(),someItem);
             }))
             .subscribe((item:Item) => {
@@ -134,7 +104,7 @@ export class Order extends SalesDocument implements Identifiable<Order> {
      * @param  {Array<string>} itemIds [description]
      * @return {[type]}         [description]
      */
-    removeItems(itemIds: Array<Item|string>): void {
+    public removeItems(itemIds: Array<Item|string>): void {
 
     }
 
@@ -156,7 +126,7 @@ export class Item extends SalesDocumentItem {
 
   private _scheduleLines:Array<Schedule> = [];
 
-/**
+  /**
    * Id of an order, that is documentId
    * @return {string} [description]
    */
@@ -165,10 +135,10 @@ export class Item extends SalesDocumentItem {
     }
 
 
-    addScheduleLines(schedules: Array<Schedule|Object> | Schedule): void {
+    public addScheduleLines(schedules: Array<Schedule|object> | Schedule): void {
       if(schedules instanceof Array) {
         from(schedules)
-        .pipe(map((someSchedule:Schedule|Object):Schedule => {
+        .pipe(map((someSchedule:Schedule|object):Schedule => {
           return someSchedule instanceof Schedule? someSchedule : _.merge(new Schedule(), someSchedule);
         }))
         .subscribe((someSchedule:Schedule) => {
@@ -185,7 +155,7 @@ export class Item extends SalesDocumentItem {
 @watchClass
 export class Schedule extends SalesDocumentScheduleLine {
 
-/**
+  /**
    * Id of an order, that is documentId
    * @return {string} [description]
    */
