@@ -69,7 +69,7 @@ export class SoapRfc {
 
   public call(input:any):Rx.Observable<SoapResponse> {
 
-    let headers = {
+    const headers = {
       'Authorization': this.make_base_auth(this.xAppsSettings.sapConnection.user, this.xAppsSettings.sapConnection.password),
       'Content-Type':'text/xml'
     };
