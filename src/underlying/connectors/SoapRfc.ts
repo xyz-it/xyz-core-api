@@ -25,7 +25,7 @@ export interface SoapRfcConfig {
   readonly url?: string;
   readonly user?: string;
   readonly async?: boolean;
-  readonly headers?: Object;
+  readonly headers?: any;
   readonly timeout?: number;
   readonly password?: string;
   readonly function?: string;
@@ -43,17 +43,16 @@ export class SoapResponse {
  *  function :
  *
  *  xapi.SoapRfcCall("BAPI_USER_GET_DETAIL").call("<USERNAME>DEMO</USERNAME>").subscribe(function (x) {
-    console.log(x);
-  },
- function (err) {
-    console.log('Error: %s', err);
-  },
- function () {
-    console.log('Completed');
-  })
-
+ *       console.log(x);
+ *     },
+ *    function (err) {
+ *       console.log('Error: %s', err);
+ *     },
+ *    function () {
+ *       console.log('Completed');
+ *     })
  */
-export function SoapRfcCall(rfcFunction:string) {
+export function SoapRfcCall(rfcFunction:string):SoapRfc {
 
   return new SoapRfc(rfcFunction);
 }
@@ -99,12 +98,12 @@ export class SoapRfc {
   };
 
 
-  private make_base_auth(user:string, password:string) {
+  private make_base_auth(user:string, password:string):string {
     return "Basic " + btoa(user + ':' + password);
   }
 
 
-  private make_soap_body(body:any) {
+  private make_soap_body(body:any):string {
 
     const innerPayload:string = (typeof body === 'string')?body:this.parseToXml(body);
 
@@ -121,7 +120,7 @@ export class SoapRfc {
   }
 
 
-  private parseToXml(body:any) {
+  private parseToXml(body:any):string {
     return this.xmlBuilder.buildObject(body);
   }
 
@@ -140,7 +139,7 @@ export class SoapRfc {
     xml2js.parseString(
       me.decode(res.response),
       {explicitArray: false},
-      function(err,result) {
+      (err,result) => {
         // console.log(result);
         xmlObject = result
       })
@@ -162,7 +161,7 @@ export class SoapRfc {
   }
 
   private catchError(err:any, caught:Rx.Observable<SoapResponse>):Rx.Observable<SoapResponse> {
-    console.log('error');
+    // console.log('error');
     return null;
   }
 }

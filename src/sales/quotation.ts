@@ -1,5 +1,5 @@
 import {SalesDocument, SalesDocumentItem } from "./sales-document";
-//import './common';
+// import './common';
 import {SalesArea} from "./common";
 import {Material} from "../master/shared/material"
 
@@ -22,7 +22,7 @@ export class Quotation extends SalesDocument {
      * @returns       id of the customer
      */
     set customerId(id:string) {
-
+      //
     }
 
     /**
@@ -38,7 +38,7 @@ export class Quotation extends SalesDocument {
      * @returns       id of the customer
      */
     synchronize(callback:any):void {
-
+      //
     }
 
 
@@ -47,12 +47,12 @@ export class Quotation extends SalesDocument {
      * @returns       id of the customer
      */
     addItems(items:Array<Item>):void {
-
+      //
     }
 
 
     removeItems(itemIds:Array<string>):void {
-
+      //
     }
 
 }

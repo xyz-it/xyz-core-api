@@ -40,21 +40,21 @@ function mapQueryToInnerPayload(params:QueryParameters):string {
 
 
 function soapResponseToResult(res:SoapResponse):QueryResults {
-  console.log("soapResponseToResult");
-  console.log(res);
-  let fields = res.response.FIELDS.item.constructor === Array? res.response.FIELDS.item:[res.response.FIELDS.item];
-  let data = res.response.DATA.item.constructor === Array? res.response.DATA.item:[res.response.DATA.item];
-  let output:any[] = [];
+  // console.log("soapResponseToResult");
+  // console.log(res);
+  const fields = res.response.FIELDS.item.constructor === Array? res.response.FIELDS.item:[res.response.FIELDS.item];
+  const data = res.response.DATA.item.constructor === Array? res.response.DATA.item:[res.response.DATA.item];
+  const output:any[] = [];
 
-  for (let prop in data) {
+  for (const prop in data) {
     if (data.hasOwnProperty(prop)) {
 
-      let item = data[prop];
+      const item = data[prop];
 
-      let outputItem:any = {};
+      const outputItem:any = {};
       fields.forEach( (field:any) => {
-        let start:number = parseInt(field.OFFSET);
-        let end:number = start + parseInt(field.LENGTH);
+        const start:number = parseInt(field.OFFSET,0);
+        const end:number = start + parseInt(field.LENGTH, 0);
         outputItem[field.FIELDNAME.toLowerCase()] = item.WA.substring(start, end).trim();
       });
 

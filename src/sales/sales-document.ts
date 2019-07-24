@@ -3,6 +3,7 @@ import {SalesArea} from "./common";
 export class SalesDocument {
 
     constructor() {
+      //
     }
 
     /*

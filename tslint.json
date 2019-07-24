@@ -7,14 +7,17 @@
     "no-implicit-dependencies": [true, "dev"],
     "no-submodule-imports": false,
     "no-invalid-this": false,
-    "class-methods-use-this": "enabled",
+    // "class-methods-use-this": "enabled",
     "max-classes-per-file": false,
     "array-type": false,
     "ordered-imports": false,
     "forin": false,
     "object-literal-shorthand": false,
     "object-literal-sort-keys": false,
+    "no-object-literal-type-assertion": false,
     "variable-name": false,
+    "member-access": false,
+    "member-ordering": false,
 
     /* tslint-immutable rules */
     // Recommended built-in rules
@@ -32,6 +35,7 @@
 
     // Functional style rules
     "no-this": false,
+    "no-this-assignment": false,
     "no-class": false,
     "no-mixed-interface": true,
     "no-expression-statement": false,

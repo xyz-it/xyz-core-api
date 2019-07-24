@@ -57,5 +57,5 @@ class ApiSettingsHolder {
     };
 }
 
-//var xAppsSettings = ApiSettingsHolder.__apiSettings__;
+// var xAppsSettings = ApiSettingsHolder.__apiSettings__;
 export let xAppsSettings:ApiSettings = ApiSettingsHolder.__apiSettings__; // = ApiSettingsHolder.__apiSettings__;

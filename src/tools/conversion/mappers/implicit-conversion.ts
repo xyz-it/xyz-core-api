@@ -2,8 +2,9 @@ import * as _ from "lodash";
 
 
 function string_to_number(value: string): number {
-    if (/^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/.test(value))
-        return Number(value);
+    if (/^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/.test(value)) {
+      return Number(value);
+    }
     return NaN;
 }
 
@@ -12,12 +13,16 @@ function string_to_boolean(value: string): boolean {
 }
 
 function string_to_date(value: string | Date): Date {
-    if (!value)
-        return undefined;
-    if (value.constructor == Date)
-        return value as Date;
-    if (typeof value === "string" && /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/.test(value))
-        return new Date(value);
+    if (!value) {
+      return undefined;
+    }
+    else if (value.constructor === Date) {
+      return value as Date;
+    }
+    else if (typeof value === "string" && /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/.test(value)) {
+      return new Date(value);
+    }
+
     return undefined;
 
     /*
@@ -43,8 +48,9 @@ function date_to_string(value: Date): string {
 
 
 function any_to_string(value: any): string {
-    if(_.isUndefined(value) || _.isNull(value) || _.isNaN(value))
-        return "";
+    if(_.isUndefined(value) || _.isNull(value) || _.isNaN(value)) {
+      return "";
+    }
 
     let valueType: string = typeof value;
     if (valueType === 'object') {
@@ -53,12 +59,12 @@ function any_to_string(value: any): string {
         }
     }
 
-    let conv = conversion.from(valueType).to("string");
+    const conv = conversion.from(valueType).to("string");
     return conv?conv(value):value;
 }
 
 
-let from: any = {
+const from: any = {
     string: {
         number: string_to_number,
         boolean: string_to_boolean,
@@ -80,9 +86,9 @@ let from: any = {
 
 
 export let conversion = {
-    from: function (sourceType: string) {
+    from: (sourceType: string) => {
         return {
-            to: function (targetType: string) {
+            to: (targetType: string) => {
                 return from[sourceType][targetType];
             }
         }

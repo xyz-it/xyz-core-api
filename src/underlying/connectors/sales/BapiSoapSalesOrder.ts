@@ -87,18 +87,18 @@ function mapOrderQueryToInnerPayload(query: Array<string> | string): string {
 
 
 function soapResponseToResult(res: SoapResponse): Order[] {
-    console.log("soapResponseToResult");
-    console.log(res);
+    // console.log("soapResponseToResult");
+    // console.log(res);
 
     const output: Order[] = [];
     const hashedOrder: any = {};
     const hashedItem: any = {};
 
-    const queriedOrders: string[] = res.response.SALES_DOCUMENTS.item.constructor == Array ? res.response.SALES_DOCUMENTS.item : [res.response.SALES_DOCUMENTS.item];
-    const orderHeaders: any[] = res.response.ORDER_HEADERS_OUT.item.constructor == Array ? res.response.ORDER_HEADERS_OUT.item : [res.response.ORDER_HEADERS_OUT.item];
-    const orderItems: any[] = res.response.ORDER_ITEMS_OUT.item.constructor == Array ? res.response.ORDER_ITEMS_OUT.item : [res.response.ORDER_ITEMS_OUT.item];
-    const orderSchedules: any[] = res.response.ORDER_SCHEDULES_OUT.item.constructor == Array ? res.response.ORDER_SCHEDULES_OUT.item : [res.response.ORDER_SCHEDULES_OUT.item];
-    const orderBusinessData: any[] = res.response.ORDER_BUSINESS_OUT.item.constructor == Array ? res.response.ORDER_BUSINESS_OUT.item : [res.response.ORDER_BUSINESS_OUT.item];
+    const queriedOrders: string[] = res.response.SALES_DOCUMENTS.item.constructor === Array ? res.response.SALES_DOCUMENTS.item : [res.response.SALES_DOCUMENTS.item];
+    const orderHeaders: any[] = res.response.ORDER_HEADERS_OUT.item.constructor === Array ? res.response.ORDER_HEADERS_OUT.item : [res.response.ORDER_HEADERS_OUT.item];
+    const orderItems: any[] = res.response.ORDER_ITEMS_OUT.item.constructor === Array ? res.response.ORDER_ITEMS_OUT.item : [res.response.ORDER_ITEMS_OUT.item];
+    const orderSchedules: any[] = res.response.ORDER_SCHEDULES_OUT.item.constructor === Array ? res.response.ORDER_SCHEDULES_OUT.item : [res.response.ORDER_SCHEDULES_OUT.item];
+    const orderBusinessData: any[] = res.response.ORDER_BUSINESS_OUT.item.constructor === Array ? res.response.ORDER_BUSINESS_OUT.item : [res.response.ORDER_BUSINESS_OUT.item];
 
     const headerMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_HEADERS_OUT") as FieldMapper[];
     const itemMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_ITEMS_OUT") as FieldMapper[];
@@ -123,7 +123,7 @@ function soapResponseToResult(res: SoapResponse): Order[] {
     })
 
     from(orderBusinessData).subscribe((businessDataJson: any) => {
-        const item = BasicMapper.deserialize(Object, businessDataMapping, businessDataJson) as Object & { documentId: string; itemId: string };
+        const item = BasicMapper.deserialize(Object, businessDataMapping, businessDataJson) as any & { documentId: string; itemId: string };
 
         if (item.itemId === "000000") {
             _.assign(hashedOrder[item.documentId], item);
@@ -223,8 +223,8 @@ function mapOrderUpdateToInnerPayload(order: Order): string {
 
 function soapUpdateResponseToResult(res: SoapResponse): Order {
 
-    console.log("soapResponseToResult");
-    console.log(res);
+    // console.log("soapResponseToResult");
+    // console.log(res);
 
     return null;
 }

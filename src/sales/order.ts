@@ -105,7 +105,7 @@ export class Order extends SalesDocument implements Identifiable<Order> {
      * @return {[type]}         [description]
      */
     public removeItems(itemIds: Array<Item|string>): void {
-
+      //
     }
 
 
