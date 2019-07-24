@@ -1,3 +1,6 @@
+/*jslint
+    this
+*/
 import {SoapResponse, SoapRfcCall} from '../SoapRfc';
 import {Observable} from 'rxjs'
 import {xAppsSettings} from '../../../env/ApiSettings';
@@ -7,7 +10,7 @@ import * as _ from 'lodash';
 import {BasicMapper, FieldMapper} from "../../../tools/conversion/mappers/basic-bapi-mapper";
 import {conversion} from "../../../tools/conversion/mappers/implicit-conversion";
 
-export function getSalesOrderDetails(query: Array<string> | string): Observable<Order[]> {
+export function getSalesOrderDetails(query: <string>[] | string): Observable<Order[]> {
     return SoapRfcCall(xAppsSettings.sapConnection.salesRfc.rfcOrderGetDetails)
         .call(mapOrderQueryToInnerPayload(query))
         .map(soapResponseToResult);

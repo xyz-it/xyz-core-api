@@ -1,6 +1,12 @@
+/*jslint
+    this
+*/
+
 // import { AjaxRequest, AjaxObservable, ajaxPost } from 'rxjs/observable/dom/AjaxObservable';
+
 import * as Rx from 'rxjs';
-import { AjaxResponse } from "rxjs/ajax";
+import { ajax, AjaxResponse } from "rxjs/ajax";
+import { map } from 'rxjs/operators';
 import * as xml2js from 'xml2js';
 import { ApiSettings, xAppsSettings } from '../../env/ApiSettings';
 
@@ -11,25 +17,25 @@ import { ApiSettings, xAppsSettings } from '../../env/ApiSettings';
 }*/
 
 export interface SoapRfcRequest {
-  body?: any;
-  function?: string;
+  readonly body?: any;
+  readonly function?: string;
 }
 
 export interface SoapRfcConfig {
-  url?: string;
-  user?: string;
-  async?: boolean;
-  headers?: Object;
-  timeout?: number;
-  password?: string;
-  function?: string;
+  readonly url?: string;
+  readonly user?: string;
+  readonly async?: boolean;
+  readonly headers?: Object;
+  readonly timeout?: number;
+  readonly password?: string;
+  readonly function?: string;
 }
 
 export class SoapResponse {
-  status: number;
-  response: any;
-  responseText: string;
-  responseType: string;
+  public readonly status: number;
+  public readonly response: any;
+  public readonly responseText: string;
+  public readonly responseType: string;
 }
 
 /**
@@ -58,11 +64,11 @@ export function SoapRfcCall(rfcFunction:string) {
  */
 export class SoapRfc {
 
-  private xmlBuilder = new xml2js.Builder();
+  private readonly xmlBuilder = new xml2js.Builder();
 
-  private xAppsSettings:ApiSettings = xAppsSettings;
+  private readonly xAppsSettings:ApiSettings = xAppsSettings;
 
-  private __singleInstance__:SoapRfc;
+  private readonly __singleInstance__:SoapRfc;
 
 
   constructor(private rfcFunction:string) { }
@@ -74,22 +80,22 @@ export class SoapRfc {
       'Content-Type':'text/xml'
     };
 
-    return Rx.Observable.ajax({
+    return ajax({
       method: 'POST',
       url: this.xAppsSettings.sapConnection.rfc.protocol
           + "://" + this.xAppsSettings.sapConnection.host + ":" + this.xAppsSettings.sapConnection.rfc.port
-        + this.xAppsSettings.sapConnection.rfc.path + this.xAppsSettings.sapConnection.rfc.service ,  //this.config.url,
+        + this.xAppsSettings.sapConnection.rfc.path + this.xAppsSettings.sapConnection.rfc.service ,  // this.config.url,
       body: this.make_soap_body(input),
-      headers: headers,
+      headers,
       responseType: 'text'
-    }).map(this.responseToSoapResponse);
+    }).pipe(map(this.responseToSoapResponse));
 
     /*return Rx.Observable.ajax.post(
         this.config.url,
         this.make_soap_body(input),
         headers
       ).map(this.responseToSoapResponse);*/
-       //.catch(this.catchError);
+       // .catch(this.catchError);
   };
 
 
@@ -100,10 +106,10 @@ export class SoapRfc {
 
   private make_soap_body(body:any) {
 
-    let innerPayload:string = (typeof body === 'string')?body:this.parseToXml(body);
+    const innerPayload:string = (typeof body === 'string')?body:this.parseToXml(body);
 
 
-    var namespace = "s0";
+    const namespace = "s0";
     return "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:" + namespace + "='urn:sap-com:document:sap:rfc:functions'>"
       + "<SOAP-ENV:Header/>"
       + "<SOAP-ENV:Body>"
@@ -124,18 +130,18 @@ export class SoapRfc {
    * [res description]
    * @param res AjaxResponse
    */
-  private responseToSoapResponse = (res:AjaxResponse) => {
+  private readonly responseToSoapResponse = (res:AjaxResponse) => {
     let xmlObject:any = {};
-    let me = this;
+    const me = this;
 
-    //console.log("responseToSoapResponse ...");
-    //console.log(res);
+    // console.log("responseToSoapResponse ...");
+    // console.log(res);
 
     xml2js.parseString(
       me.decode(res.response),
       {explicitArray: false},
       function(err,result) {
-        //console.log(result);
+        // console.log(result);
         xmlObject = result
       })
 
@@ -147,10 +153,10 @@ export class SoapRfc {
 
 
   private decode(text:string):string {
-    let elem = document.createElement('textarea');
+    const elem = document.createElement('textarea');
     elem.innerHTML = text;
-    //console.log("decode ...");
-    //console.log(elem.value);
+    // console.log("decode ...");
+    // console.log(elem.value);
 
     return elem.value;
   }
