@@ -75,15 +75,16 @@ export class SoapRfc {
   public call(input:any):Rx.Observable<SoapResponse> {
 
     const headers = {
-      'Authorization': this.make_base_auth(this.xAppsSettings.sapConnection.user, this.xAppsSettings.sapConnection.password),
+      'Authorization': this.make_base_auth(this.xAppsSettings.sapBackendConnection.user, this.xAppsSettings.sapBackendConnection.password),
       'Content-Type':'text/xml'
     };
 
     return ajax({
       method: 'POST',
-      url: this.xAppsSettings.sapConnection.rfc.protocol
-          + "://" + this.xAppsSettings.sapConnection.host + ":" + this.xAppsSettings.sapConnection.rfc.port
-        + this.xAppsSettings.sapConnection.rfc.path + this.xAppsSettings.sapConnection.rfc.service ,  // this.config.url,
+      url: this.xAppsSettings.sapBackendConnection.rfc.protocol
+          + "://" + this.xAppsSettings.sapBackendConnection.host + ":" + this.xAppsSettings.sapBackendConnection.rfc.port
+          + this.xAppsSettings.sapBackendConnection.rfc.path + this.xAppsSettings.sapBackendConnection.rfc.service
+          + '?sap-client=' + this.xAppsSettings.sapBackendConnection.client,
       body: this.make_soap_body(input),
       headers,
       responseType: 'text'

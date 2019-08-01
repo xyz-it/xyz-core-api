@@ -134,14 +134,14 @@ export function makeWatchable<TBase extends Constructor>(Base: TBase):Constructo
          */
         public addTraceToAttribute(key: string): number {
 
-            this.constructor.prototype._tracedAttributes[key] = WatchedObject._tracedAttributesCount;
+            WatchedObject._tracedAttributes[key] = WatchedObject._tracedAttributesCount;
 
             return 2 ** (WatchedObject._tracedAttributesCount++);
         }
 
 
         public getAttributeId(key:string):number {
-            return /*WatchedObject*/this.constructor.prototype._tracedAttributes.hasOwnProperty(key)? 2 ** WatchedObject._tracedAttributes[key] : 0;
+            return WatchedObject._tracedAttributes.hasOwnProperty(key)? 2 ** WatchedObject._tracedAttributes[key] : 0;
         }
     };
 }

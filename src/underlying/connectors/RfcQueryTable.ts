@@ -70,7 +70,7 @@ function soapResponseToResult(res:SoapResponse):QueryResults {
 }
 
 export function rfcQuery(params:QueryParameters):Observable<QueryResults> {
-  return SoapRfcCall(xAppsSettings.sapConnection.rfc.rfcread)
+  return SoapRfcCall(xAppsSettings.sapBackendConnection.rfc.rfcread)
     .call(mapQueryToInnerPayload(params))
     .pipe(map(soapResponseToResult));
 }

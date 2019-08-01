@@ -12,13 +12,13 @@ import {BasicMapper, FieldMapper} from "../../../tools/conversion/mappers/basic-
 import {conversion} from "../../../tools/conversion/mappers/implicit-conversion";
 
 export function getSalesOrderDetails(query: Array<string> | string): Observable<Order[]> {
-    return SoapRfcCall(xAppsSettings.sapConnection.salesRfc.rfcOrderGetDetails)
+    return SoapRfcCall(xAppsSettings.sapBackendConnection.salesRfc.rfcOrderGetDetails)
         .call(mapOrderQueryToInnerPayload(query))
         .pipe(map(soapResponseToResult));
 }
 
 export function updateSalesOrderDetails(order: Order): Observable<Order> {
-    return SoapRfcCall(xAppsSettings.sapConnection.salesRfc.rfcOrderUpdate)
+    return SoapRfcCall(xAppsSettings.sapBackendConnection.salesRfc.rfcOrderUpdate)
         .call(mapOrderUpdateToInnerPayload(order))
         .pipe(map(soapUpdateResponseToResult))
 }

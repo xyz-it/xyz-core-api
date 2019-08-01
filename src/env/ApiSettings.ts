@@ -2,10 +2,11 @@ export interface ApiSettings {
     company?:string;
     url?:string;
 
-    sapConnection?: SapConnection;
+    sapBackendConnection?: SapBackendConnection;
+    sapOdataConnection?: SapOdataConnection;
 }
 
-export interface SapConnection {
+export interface SapBackendConnection {
     host?:string;
     client?:number;
     user?:string;
@@ -13,6 +14,13 @@ export interface SapConnection {
 
     rfc?:ServiceEndpoint;
     salesRfc?:SalesEndpoint;
+}
+
+export interface SapOdataConnection {
+  host?:string;
+  client?:number;
+  user?:string;
+  password?:string;
 }
 
 export interface ServiceEndpoint {
@@ -33,17 +41,17 @@ export interface SalesEndpoint {
 class ApiSettingsHolder {
     static __apiSettings__:ApiSettings = {
         company: "SomeCompany",
-        url: "http://ampsv017pjt0t.p1.saint-gobain.net:8000/sap/bc/soap/rfc?sap-client=800",
+        url: "https://someurl",
 
-        sapConnection: {
-            host: "ampsv017pjt0t.p1.saint-gobain.net",
-            user: "K5965772",
-            password: "kimpen@123456789",
-            client: 800,
+        sapBackendConnection: {
+            host: "hosttobesetup",
+            user: "usertobesetup",
+            password: "passwordtobesetup",
+            client: 100,
 
             rfc: {
-                port: 8000,
-                protocol: "http",
+                port: 8443,
+                protocol: "https",
                 path: "/sap/bc/soap/",
                 service: "rfc",
                 rfcread: "BBP_RFC_READ_TABLE"
@@ -53,7 +61,14 @@ class ApiSettingsHolder {
               rfcOrderGetDetails: "BAPISDORDER_GETDETAILEDLIST",
               rfcOrderUpdate: "BAPI_SALESORDER_CHANGE"
             }
-        } as SapConnection
+        } as SapBackendConnection,
+
+      sapOdataConnection : {
+        host: "hosttobesetup",
+        user: "usertobesetup",
+        password: "passwordtobesetup",
+        client: 100,
+      } as SapOdataConnection
     };
 }
 
