@@ -5,10 +5,12 @@ import {
   BasicMapper,
   FieldMapper
 } from "../../tools/conversion/mappers/basic-bapi-mapper";
+import { injectable } from "inversify";
 
 
 export function GenericRfcAdapter<T>(modelConstructor: new() => T, mapping: FieldMapper[], table:string ): (new() => ModelAdapter<T>) {
-  return class implements ModelAdapter<T> {
+  @injectable()
+  class GenericRfcAdapter implements ModelAdapter<T> {
 
     private modelConstructor: new() => T;
     private mapping: FieldMapper[];
@@ -57,4 +59,6 @@ export function GenericRfcAdapter<T>(modelConstructor: new() => T, mapping: Fiel
       return objectTable;
     }
   }
+
+  return GenericRfcAdapter;
 }

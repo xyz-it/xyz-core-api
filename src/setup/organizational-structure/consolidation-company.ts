@@ -1,11 +1,12 @@
 import {inject, named} from "inversify";
-import { SERVICE_IDENTIFIER, TAG } from "../../underlying/connectors/identifiers";
+// import { SERVICE_IDENTIFIER, TAG } from "../../underlying/connectors/identifiers";
 import {ModelAdapter} from "../../underlying/connectors/model-adapter";
 import {Country} from "../common/country";
 import {Language} from "../common/language";
 import {Currency} from "../common/currency";
 import {Company} from "./company";
 import { container} from "../../inversify.config";
+import { ConsolidationCompanyRfcAdapter } from "../../underlying/connectors/setup/consolidation-company-rfc-adapter";
 
 enum LEGAL_FORM {
   INDEPENDENT,
@@ -14,7 +15,7 @@ enum LEGAL_FORM {
 
 export class ConsolidationCompany {
   // @inject(SERVICE_IDENTIFIER.MODEL_ADAPTER) @named(TAG.CONSOLIDATION_COMPANY) private static adapter: ModelAdapter<ConsolidationCompany>;
-  private static adapter: ModelAdapter<any>;
+  public static adapter: ModelAdapter<any>;
 
   public companyId:string;
   public country:Country;
@@ -38,9 +39,11 @@ export class ConsolidationCompany {
   public isReadPurchaseOrder:boolean;
 
   public static getAll():Promise<ConsolidationCompany[]> {
-    if (!this.adapter) {
-      this.adapter = container.getNamed(SERVICE_IDENTIFIER.MODEL_ADAPTER, TAG.CONSOLIDATION_COMPANY);
-    }
+    /*if (!this.adapter) {
+      container.bind<ModelAdapter<any>>("ModelAdapter").to(ConsolidationCompanyRfcAdapter).whenTargetNamed("ConsolidationCompany");
+      this.adapter = container.getNamed("ModelAdapter", "ConsolidationCompany");
+    }*/
     return this.adapter.query()
   }
 }
+

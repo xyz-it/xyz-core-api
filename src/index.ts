@@ -19,4 +19,13 @@ const sales = {
 export { sales };
 
 // export * from './inversify.config'
-export { container } from './inversify.config';
+import { container } from './inversify.config';
+import { ModelAdapter } from "./underlying/connectors/model-adapter";
+import { ConsolidationCompanyRfcAdapter } from "./underlying/connectors/setup/consolidation-company-rfc-adapter";
+import { ConsolidationCompany } from "./setup/organizational-structure/consolidation-company";
+
+
+container.bind<ModelAdapter<any>>("ModelAdapter").to(ConsolidationCompanyRfcAdapter).whenTargetNamed("ConsolidationCompany");
+ConsolidationCompany.adapter = container.getNamed("ModelAdapter", "ConsolidationCompany");
+
+export { container }
