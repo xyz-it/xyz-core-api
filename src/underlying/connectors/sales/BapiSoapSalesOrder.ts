@@ -1,7 +1,7 @@
 /*jslint
     this
 */
-import {SoapResponse, SoapRfcCall} from '../SoapRfc';
+import {SoapResponse, SoapRfcCall} from '../soap-rfc';
 import {from, Observable} from 'rxjs'
 import {map} from 'rxjs/operators'
 import {xAppsSettings} from '../../../env/ApiSettings';

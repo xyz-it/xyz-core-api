@@ -1,7 +1,7 @@
 export interface ModelAdapter<T> {
-  readonly read: ( ...args: any[]) => T;
-  readonly query: (...args: any[]) => T[];
-  readonly create: (obj: T|T[]) => T|T[];
-  readonly update: (obj: T|T[]) => T|T[];
-  readonly delete: (obj: T|T[]) => void;
+  read( ...args: any[]): Promise<T>;
+  query(...args: any[]): Promise<T[]>;
+  create(obj: T|T[]): Promise<T|T[]>;
+  update(obj: T|T[]): Promise<T|T[]>;
+  delete(obj: T|T[]): void;
 }

@@ -1,0 +1,84 @@
+{
+  "rfcSoap": [
+    {
+      "source": "city",
+      "target": "city"
+    },
+    {
+      "source": "cntry",
+      "target": "country"
+    },
+    {
+      "source": "curr",
+      "target": "currency"
+    },
+    {
+      "source": "glsip",
+      "target": "isWriteLineItems"
+    },
+    {
+      "source": "indpo",
+      "target": "isReadPurchaseOrder"
+    },
+    {
+      "source": "langu",
+      "target": "language"
+    },
+    {
+      "source": "lccomp",
+      "target": "isConsolidationCompany"
+    },
+    {
+      "source": "mclnt",
+      "target": "masterDataClient"
+    },
+    {
+      "source": "mcomp",
+      "target": "masterDataCompany"
+    },
+    {
+      "source": "modcp",
+      "target": "groupingCode"
+    },
+    {
+      "source": "name1",
+      "target": "name"
+    },
+    {
+      "source": "name2",
+      "target": "name2"
+    },
+    {
+      "source": "pobox",
+      "target": "poBox"
+    },
+    {
+      "source": "pstlc",
+      "target": "zipCode"
+    },
+    {
+      "source": "rcomp",
+      "target": "companyId"
+    },
+    {
+      "source": "resta",
+      "target": "legalStatus"
+    },
+    {
+      "source": "rform",
+      "target": "legalForm"
+    },
+    {
+      "source": "stret",
+      "target": "street"
+    },
+    {
+      "source": "strt2",
+      "target": "street2"
+    },
+    {
+      "source": "zweig",
+      "target": "industrialSector"
+    }
+  ]
+}

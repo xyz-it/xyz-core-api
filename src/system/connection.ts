@@ -1,5 +1,5 @@
 import {Observable} from "rxjs";
-import { SoapRfcCall, SoapRfc, SoapResponse } from '../underlying/connectors/SoapRfc';
+import { SoapRfcCall, SoapRfc, SoapResponse } from '../underlying/connectors/soap-rfc';
 import { map } from 'rxjs/operators'
 import { xAppsSettings } from '../env/ApiSettings';
 

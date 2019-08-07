@@ -31,7 +31,7 @@
     "no-let": false,
     "no-object-mutation": false,
     "no-delete": true,
-    "no-method-signature": true,
+    // "no-method-signature": true,
 
     // Functional style rules
     "no-this": false,

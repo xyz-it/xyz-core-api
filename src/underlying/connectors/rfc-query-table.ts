@@ -1,4 +1,4 @@
-import { SoapRfcCall, SoapRfc, SoapResponse } from './SoapRfc';
+import { SoapRfcCall, SoapRfc, SoapResponse } from './soap-rfc';
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { xAppsSettings } from '../../env/ApiSettings';
