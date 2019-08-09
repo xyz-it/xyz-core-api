@@ -1,7 +1,11 @@
 import "reflect-metadata";
 import * as _ from "lodash";
 import { from, Observable } from "rxjs";
-import { makeWatchable, enhancePropertiesOf } from "../../../underlying/models/tracable"
+import {
+  makeWatchable,
+  enhancePropertiesOf,
+  Constructor
+} from "../../../underlying/models/tracable"
 import { conversion } from './implicit-conversion';
 
 
@@ -35,7 +39,7 @@ export function watchClass(target: any):any {
 
 export class BasicMapper {
 
-    public static deserialize<T>(clazz: new() => T , mapping: FieldMapper[], inputJsonObject: any): T {
+    public static deserialize<T>(clazz: Constructor , mapping: FieldMapper[], inputJsonObject: any): T {
 
         // Checks beforehand
         if ((clazz === undefined) || (inputJsonObject === undefined) || (mapping === undefined)) {
@@ -56,7 +60,7 @@ export class BasicMapper {
 
         });
 
-        return result;
+        return result as T;
     }
 }
 

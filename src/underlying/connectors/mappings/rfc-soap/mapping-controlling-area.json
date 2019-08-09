@@ -1,0 +1,13 @@
+{
+  "mappingRfcControllingArea": [
+    {"source":"kokrs","target":"controllingArea"},
+    {"source":"bezei","target":"name"},
+    {"source":"waers","target":"currency"},
+    {"source":"ktopl","target":"chartOfAccounts"},
+    {"source":"lmona","target":"fiscalYearVariant"},
+    {"source":"kokfi","target":"allocationIndicator"},
+    {"source":"logsystem","target":"logicalSystem"},
+    {"source":"alemt","target":"costCenterDistributionMethod"},
+    {"source":"md_logsystem","target":"masterDataLogicalSystem"}
+  ]
+}

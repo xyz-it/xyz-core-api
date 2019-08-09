@@ -1,64 +1,52 @@
-import {ModelAdapter} from "./model-adapter";
+import {FlexAdapter, ModelAdapter} from "./model-adapter";
 import { rfcQuery } from "./rfc-query-table";
 import {map} from "rxjs/operators";
 import {
-  BasicMapper,
-  FieldMapper
+  BasicMapper
 } from "../../tools/conversion/mappers/basic-bapi-mapper";
-import { injectable } from "inversify";
+import {InjectModelAdapter} from "./inject-model-adapter";
 
 
-export function GenericRfcAdapter<T>(modelConstructor: new() => T, mapping: FieldMapper[], table:string ): (new() => ModelAdapter<T>) {
-  @injectable()
-  class GenericRfcAdapter implements ModelAdapter<T> {
+export class FlexRfcAdapter implements FlexAdapter {
 
-    private modelConstructor: new() => T;
-    private mapping: FieldMapper[];
-    private table: string;
+  create<T>(obj: T|T[]): Promise<T|T[]> {
+    return null; // Not implemented for RFC SOAP
+  };
 
-    public constructor( ) {
-      //
-      this.modelConstructor = modelConstructor;
-      this.mapping = mapping;
-      this.table = table;
-    }
+  delete<T>(obj: T|T[]): void {
+    return null; // Not implemented
+  };
 
-    create(obj: T|T[]): Promise<T|T[]> {
-      return null; // Not implemented for RFC SOAP
-    };
+  query<T>(name:string, ...args: any[]): Promise<T[]> {
+    return rfcQuery({queryTable: InjectModelAdapter.getAdapterFor(name).table })
+      .pipe(map(this.mapTo(name)))
+      .toPromise() as Promise<T[]>
+  };
 
-    delete(obj: T|T[]): void {
-      return null; // Not implemented
-    };
+  update<T>(obj: T|T[]): Promise<T|T[]> {
+    return null; // Not implemented
+  };
 
-    query(...args: any[]): Promise<T[]> {
-      return rfcQuery({queryTable: this.table })
-        .pipe(map(this.mapToGeneric))
-        .toPromise();
-    };
+  // readonly read = (...args: any[]) => {
+  // tslint:disable-next-line:no-shadowed-variable
+  read<T>(name:string, ...args: any[]): Promise<T> {
+    return rfcQuery({queryTable: InjectModelAdapter.getAdapterFor(name).table, whereClause: [`RCOMP = $(companyId)`] })
+      .pipe(map(this.mapTo(name)),map(tab => tab[0] as T))
+      .toPromise() as Promise<T>;
+  }
 
-    update<T>(obj: T|T[]): Promise<T|T[]> {
-      return null; // Not implemented
-    };
+  private mapTo<T>(name: string): (any) => T[] {
+    const currentClass = InjectModelAdapter.getAdapterFor(name).class;
+    const currentMapping = InjectModelAdapter.getAdapterFor(name).mapping;
 
-    // readonly read = (...args: any[]) => {
-    // tslint:disable-next-line:no-shadowed-variable
-    read( ...args: any[]): Promise<T> {
-      return rfcQuery({queryTable: this.table, whereClause: [`RCOMP = $(companyId)`] })
-        .pipe(map(this.mapToGeneric),map(tab => tab[0]))
-        .toPromise();
-    }
-
-    private mapToGeneric(input:any):T[] {
+    return (input:any) => {
       const objectTable:T[] = new Array<T>();
 
       input.data.forEach(record => {
-        objectTable.push(BasicMapper.deserialize<T>(this.modelConstructor, this.mapping, record));
+        objectTable.push(BasicMapper.deserialize<T>(currentClass, currentMapping, record));
       })
 
-      return objectTable;
+      return objectTable as T[];
     }
   }
-
-  return GenericRfcAdapter;
 }

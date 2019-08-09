@@ -1,0 +1,12 @@
+{
+  "mappingRfcCreditControlArea": [
+    {"source":"kkber","target":"creditControlArea"},
+    {"source":"waers","target":"currency"},
+    {"source":"stafo","target":"creditUpdate"},
+    {"source":"periv","target":"fiscalYearVariant"},
+    {"source":"ctlpc","target":"creditManagementRiskCategory"},
+    {"source":"klimk","target":"creditLimit"},
+    {"source":"sbgrp","target":"creditManagementRepresentativesGroup"},
+    {"source":"allcc","target":"isAllCompanyPostingPossible"}
+  ]
+}

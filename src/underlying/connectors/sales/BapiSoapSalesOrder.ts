@@ -106,19 +106,19 @@ function soapResponseToResult(res: SoapResponse): Order[] {
     const businessDataMapping = _.get(mapping, "BAPISDORDER_GETDETAILEDLIST.ORDER_BUSINESS_OUT") as FieldMapper[];
 
     from(orderHeaders).subscribe((headerJson: any) => {
-        const order = BasicMapper.deserialize(Order, headerMapping, headerJson);
+        const order = BasicMapper.deserialize<Order>(Order, headerMapping, headerJson);
         output.push(order);
         hashedOrder[order.documentId] = order;
     });
 
     from(orderItems).subscribe((itemJson: any) => {
-        const item = BasicMapper.deserialize(Item, itemMapping, itemJson);
+        const item = BasicMapper.deserialize<Item>(Item, itemMapping, itemJson);
         hashedOrder[item.documentId].addItems(item);
         hashedItem[item.documentId + item.itemId] = item;
     })
 
     from(orderSchedules).subscribe((scheduleJson: any) => {
-        const schedule = BasicMapper.deserialize(Schedule, scheduleMapping, scheduleJson);
+        const schedule = BasicMapper.deserialize<Schedule>(Schedule, scheduleMapping, scheduleJson);
         hashedItem[schedule.documentId + schedule.itemId].addScheduleLines(schedule);
     })
 

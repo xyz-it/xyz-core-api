@@ -1,8 +1,0 @@
-export interface ModelAdapter2 {
-    read<T>( ...args: any[]): Promise<T>;
-    query<T>(...args: any[]): Promise<T[]>;
-    create<T>(mapping: FieldMapper[], table:string, obj: T|T[]): Promise<T|T[]>;
-    update<T>(mapping: FieldMapper[], table:string, obj: T|T[]): Promise<T|T[]>;
-    delete<T>(obj: T|T[]): void;
-  }
-  

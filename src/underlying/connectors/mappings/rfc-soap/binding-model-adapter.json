@@ -1,0 +1,6 @@
+{
+  "bindingSetup": [
+    { "name" : "ConsolidationCompany", "adapter": "rfc-soap", "table": "T880", "mapping": "./setup/mapping-consolidation-company.json"}
+  ]
+}
+

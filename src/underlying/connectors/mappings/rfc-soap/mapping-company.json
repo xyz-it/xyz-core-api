@@ -1,0 +1,24 @@
+{
+  "mappingRfcCompany": [
+    {"source":"bukrs","target":"companyCode"},
+    {"source":"butxt","target":"companyCodeName"},
+    {"source":"ort01","target":"cityName"},
+    {"source":"land1","target":"country"},
+    {"source":"waers","target":"currency"},
+    {"source":"spras","target":"language"},
+    {"source":"ktopl","target":"chartOfAccounts"},
+    {"source":"waabw","target":"maxExchangeRateDeviation"},
+    {"source":"periv","target":"fiscalYearVariant"},
+    {"source":"kokfi","target":"allocationIndicator"},
+    {"source":"rcomp","target":"company"},
+    {"source":"adrnr","target":"addressId"},
+    {"source":"stceg","target":"vatRegistration"},
+    {"source":"fikrs","target":"financialManagementArea"},
+    {"source":"xfmco","target":"isProjectCashManagementActive"},
+    {"source":"xfmcb","target":"isCashBudgetManagementActive"},
+    {"source":"xfmca","target":"isFundManagementUpdateActive"},
+    {"source":"txjcd","target":"taxJuridictionCode"},
+    {"source":"xtemplt","target":"isTemplate"},
+    {"source":"wt_newwt","target":"isExtendedWhldgTaxActive"}
+  ]
+}

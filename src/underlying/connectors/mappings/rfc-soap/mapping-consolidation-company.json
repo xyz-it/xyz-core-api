@@ -1,5 +1,5 @@
 {
-  "rfcSoap": [
+  "mappingRfcConsolidationCompany": [
     {
       "source": "city",
       "target": "city"

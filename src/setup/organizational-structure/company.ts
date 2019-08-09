@@ -3,9 +3,11 @@ import {Currency} from "../common/currency";
 import {Language} from "../common/language";
 import {ChartOfAccounts} from "../../master/finance/chart-of-accounts";
 import {ConsolidationCompany} from "./consolidation-company";
-import {ControllingArea} from "./controlling-area";
+import {ControllingArea, ALLOCATION_INDICATOR} from "./controlling-area";
 import {CreditControlArea} from "./credit-control-area";
+import {injectAdapter} from "../../underlying/connectors/inject-model-adapter";
 
+@injectAdapter
 export class Company {
   companyCode: string;
   companyCodeName: string;
@@ -14,18 +16,24 @@ export class Company {
   currency: Currency;
   language: Language;
   chartOfAccounts: ChartOfAccounts;
+  maxExchangeRateDeviation: number;
   fiscalYearVariant: string;
   company: ConsolidationCompany;
   creditControlArea: CreditControlArea;
   countryChartOfAccounts: string;
   financialManagementArea: string;
-  addressID: string;
+  addressId: string;
   taxableEntity: string;
-  vATRegistration: string;
-  extendedWhldgTaxIsActive: boolean;
+  vatRegistration: string;
+  isExtendedWhldgTaxActive: boolean;
   controllingArea: ControllingArea;
   fieldStatusVariant: string;
   nonTaxableTransactionTaxCode: string;
   docDateIsUsedForTaxDetn: boolean;
-  taxRptgDateIsActive: boolean;
+  isTaxRptgDateActive: boolean;
+  allocationIndicator: ALLOCATION_INDICATOR;
+  isProjectCashManagementActive: boolean;
+  isCashBudgetManagementActive: boolean;
+  isFundManagementUpdateActive: boolean;
+  isTemplate:boolean;
 }
